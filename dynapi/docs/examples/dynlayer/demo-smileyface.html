@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DynAPI Examples - DynLayer Extensions [Encapsulate Demo - Smiley Face]</title>
+<script language="JavaScript" src="../../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	smiley1 = new Smiley('smiley1Div',null,'smiley1Img')
+}
+
+smileImg = new Image()
+smileImg.src = "../../../../images/misc/smile.gif"
+frownImg = new Image()
+frownImg.src = "../../../../images/misc/frown.gif"
+
+function Smiley(id,nestref,img) {
+	// Import DynLayer functionality:
+	// all properties and methods of DynLayer
+	// will be available to this object
+	this.dynlayer = DynLayer
+	this.dynlayer(id,nestref)
+
+	// custom properties and methods
+	this.img = img
+	this.state = "smile"
+	this.showState = SmileyShowState	
+	this.smile = SmileySmile
+	this.frown = SmileyFrown
+}
+function SmileyShowState() {
+	// alert state
+	alert(this.state)
+}
+function SmileySmile() {
+	// change to smile image
+	this.doc.images[this.img].src = smileImg.src
+	this.state = "smile"
+}
+function SmileyFrown() {
+	// change to frown image
+	this.doc.images[this.img].src = frownImg.src
+	this.state = "frown"
+}
+Smiley.prototype = DynLayer.prototype
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#smiley1Div {position:absolute; left:250; top:50;}
+-->
+</style>
+</head>
+
+<body onLoad="init()" BGCOLOR="#ffffff">
+
+<div id="smiley1Div">
+<img name="smiley1Img" src="../../../../images/misc/smile.gif" width=45 height=45>
+</div>
+
+Smiley Controls:
+<br><a href="javascript:smiley1.showState()">show state</a>
+<br><a href="javascript:smiley1.smile()">smile</a>
+<br><a href="javascript:smiley1.frown()">frown</a>
+<p><a href="javascript:smiley1.hide()">hide</a>
+<br><a href="javascript:smiley1.show()">show</a>
+
+</body>
+</html>

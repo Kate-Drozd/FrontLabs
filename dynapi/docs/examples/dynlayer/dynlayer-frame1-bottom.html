@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>bottom frame</title>
+<script language="JavaScript">
+<!--
+
+// all Dynlayer JavaScript is in dynlayer-frame1-top.html
+
+// this init() function will ensure that the top frame
+// has been fully loaded before assigning the DynLayers
+function init() {
+	if (parent.topFrame.loaded) {  // the loaded variable is set true by the topFrames' init() function
+		parent.topFrame.setDynLayers()
+	}
+	else setTimeout('init()',100)  // if it's not loaded yet, call it again in 100ms
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+
+#mylayerDiv {position:absolute; left:50; top:50; width:80; height:80; clip:rect(0,80,80,0); layer-background-color:#C0C0C0; background-color:#C0C0C0;}
+#mynest1Div {position:absolute; left:170; top:50; width:200; height:200; clip:rect(0,200,200,0); layer-background-color:#E1E1E1; background-color:#E1E1E1;}
+#mynest2Div {position:absolute; left:30; top:30; width:160; height:160; clip:rect(0,160,160,0); layer-background-color:#C5C5C5; background-color:#C5C5C5;}
+#mynest3Div {position:absolute; left:30; top:30; width:120; height:120; clip:rect(0,120,120,0); layer-background-color:#ACACAC; background-color:#ACACAC;}
+
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv">mylayerDiv</div>
+
+<div id="mynest1Div">
+	mynest1Div
+	
+	<div id="mynest2Div">
+		mynest2Div
+		
+		<div id="mynest3Div">
+			mynest3Div
+		</div>
+		
+	</div>
+	
+</div>
+
+</body>
+</html>

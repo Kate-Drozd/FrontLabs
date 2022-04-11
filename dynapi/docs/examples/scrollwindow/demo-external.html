@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollWindow Demo [external]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/scrollwindow.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+}
+
+mywindow = new ScrollWindow(150,50,250,200)
+mywindow.build()
+
+writeCSS(
+mywindow.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript:mywindow.load('text-external.html')">load page</a>
+
+<script language="JavaScript">
+document.write(mywindow.div)
+</script>
+
+</body>
+</html>

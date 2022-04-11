@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Content page with JavaScript</title>
+<script language="JavaScript">
+<!--
+
+if (parent.Scroll) parent.myscroll.writeContent(document)
+
+function showAlert() {
+	alert('Congratulations!!\n\nThe showAlert() function worked.')
+}
+
+function updateForm(doc) {
+	doc.myform.textfield.value = "Yup, that worked also."
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+-->
+</style>
+</head>
+
+<body onLoad="if (parent.Scroll) parent.myscroll.activate()">
+
+<div id="content">
+
+<h3>This is the Content</h3>
+
+<p><a href="javascript://" onClick="showAlert()">Click Here</a> to show an alert
+
+<p><P><a href="javascript://" onClick="updateForm(document)">Click Here</a> to update the following text field:
+
+<FORM name="myform">
+<INPUT name="textfield" TYPE="text" SIZE=25>
+</FORM>
+
+<p><a href="javascript:parent.myscroll.load('text1-nonbuffer.html')">Click Here</a> to load a new page into this window (hit the "back" link to return)
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+
+</div>
+
+</body>
+</html>

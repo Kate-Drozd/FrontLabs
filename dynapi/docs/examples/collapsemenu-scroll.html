@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>DynAPI Examples - CollapseMenu Object Demo [scroll]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-glide.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-common.js"></script>
+<script language="JavaScript" src="../../js/collapsemenu.js"></script>
+<script language="JavaScript" src="../../js/scroll2.js"></script>
+<script lanuage="JavaScript">
+<!--
+
+onload = init
+function init() {
+	collapse.activate()
+
+	// manually set the height of the scroll to the height of the collapsemenu
+	myscroll.activate(collapse.w,collapse.itemTotal)
+
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+function mouseDown(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	if (ScrollTestActive()) return false
+	
+	// other mouseDown code
+	return true
+}
+function mouseMove(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	if (ScrollTestActive()) return false
+
+	// other mouseMove code
+	return true
+}
+function mouseUp(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseUp code
+	return true
+}
+
+myscroll = new Scroll(20,20,250,300)
+myscroll.useH = true
+myscroll.imgSet('../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+myscroll.build()
+
+collapse = new CollapseMenu(0,0,200,5)
+collapse.openStyle = 'glide'
+collapse.build()
+
+// synch with the 'myscroll' scroll object
+collapse.scroll = myscroll
+collapse.onToggle = CollapseSynchScroll
+
+// onToggle handler to sync the height of a Scroll with a CollapseMenu
+function CollapseSynchScroll() {
+	var h = this.itemTotal
+	for (var i=0;i<this.numBlocks;i++) {
+		if (this.blocks[i].open) {
+			h += this.blocks[i].contentHeight
+		}
+	}
+	if (this.scroll.window.contentlyr.y<0 && h<this.scroll.window.screenlyr.h) {
+		this.scroll.window.contentlyr.moveTo(null,0)
+	}
+	this.scroll.activate(this.w,h,false)
+}
+
+writeCSS(
+myscroll.css+
+collapse.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(myscroll.divStart)
+</script>
+
+<script language="JavaScript">
+document.write(collapse.divStart)
+</script>
+
+<div id="CollapseMenu0Block0">
+<div id="CollapseMenu0Block0Item"><a href="javascript:collapse.toggle(0)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">The Basics</a></div>
+<div id="CollapseMenu0Block0Content">
+<OL>
+<LI><a href="../overview/overview.html">Overview</a>
+<LI><a href="../stylesheets/stylesheets.html">Cascading Style Sheets Positioning</a>
+<LI><a href="../javascript/javascript.html">Cross-Browser JavaScript</a>
+<LI><a href="../showhide/showhide.html">Hiding and Showing</a>
+<LI><a href="../moving/moving.html">Moving</a>
+<LI><a href="../sliding/sliding.html">Sliding</a>
+<LI><a href="../mouseclick/mouseclick.html">Mouse Click Animation</a>
+<LI><a href="../../images/images.html">Changing Images/Rollovers</a>
+<LI><a href="../clipping/clipping.html">Clipping Layers</a>
+<LI><a href="../nesting/nesting.html">Nesting Layers</a>
+</OL>
+</div>
+
+<div id="CollapseMenu0Block1">
+<div id="CollapseMenu0Block1Item"><a href="javascript:collapse.toggle(1)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Advanced Topics</a></div>
+<div id="CollapseMenu0Block1Content">
+<OL>
+<LI><a href="../keystrokes/keystrokes.html">Keystroke Events</a>
+<LI><a href="../audio/audio.html">Audio Controls</a>
+<LI><a href="../writing/writing.html">Layer Writing</a>
+<LI><a href="../changingstyles/changingstyles.html">Changing Styles</a>
+<LI><a href="../source/source.html">External Source Files</a>
+<LI><a href="../forms/forms.html">Working With Forms</a>
+<LI><a href="../generate/generate.html">Generated Layers</a>
+<LI><a href="../widthheight/widthheight.html">Using Browser Width/Height</a>
+<LI><a href="../templates/templates.html">Page Templates</a>
+</OL>
+</div>
+
+<div id="CollapseMenu0Block2">
+<div id="CollapseMenu0Block2Item"><a href="javascript:collapse.toggle(2)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Object-Oriented DHTML</a></div>
+<div id="CollapseMenu0Block2Content">
+<OL>
+<LI><a href="../newobjects/newobjects.html">Creating New Objects</a>
+<LI><a href="../browsercheck/browsercheck.html">BrowserCheck Object</a>
+<LI><a href="../dynlayer/dynlayer.html">The Dynamic Layer Object API</a>
+<LI><a href="../dynlayerext/dynlayerext.html">DynLayer Extensions</a>
+<LI><a href="../geometric/geometric.html">Geometric Animation Objects</a>
+<LI><a href="../gifanim/gifanim.html">Gif Animation</a>
+<LI><a href="../path/path.html">Path Animation</a>
+<LI><a href="../duopath/index.html">Using DuoPath</a>
+<LI><a href="../mouseevents/mouseevents.html">Mouse Events</a>
+<LI><a href="../dragconcepts/dragconcepts.html">Drag and Drop Concepts</a>
+<LI><a href="../drag/drag.html">Drag Object</a>
+<LI><a href="../createdestroy/createdestroy.html">Creating and Destroying Layers</a>
+<LI><a href="../cgicomm/cgicomm.html">CGI Communication</a>
+<LI><a href="../buttons/buttons.html">DHTML Buttons</a>
+<LI><a href="../radio/radio.html">Radio Buttons</a>
+<LI><a href="../checkbox/checkbox.html">CheckBoxes</a>
+<LI><a href="../scrollconcepts/scrollconcepts.html">Scroll Concepts</a>
+</OL>
+</div>
+
+<div id="CollapseMenu0Block3">
+<div id="CollapseMenu0Block3Item"><a href="javascript:collapse.toggle(3)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Reusable Compenents</a></div>
+<div id="CollapseMenu0Block3Content">
+<OL>
+<LI><a href="../widgets/widgets.html">Creating Reusable Widgets</a>
+<LI><a href="../scroll/scroll.html">Scroll</a>
+<LI><a href="../scroll2/scroll2.html">Scroll2</a>
+<LI><a href="../list/list.html">List</a>
+<LI><a href="../selectlist/selectlist.html">SelectList</a>
+<LI><a href="../scrolllist/scrolllist.html">ScrollList</a>
+<LI><a href="../menulist/menulist.html">MenuList</a>
+<LI><a href="../dynwindow/dynwindow.html">DynWindow</a>
+<LI><a href="../clock/clock.html">Clock</a>
+<LI><a href="../calendar/calendar.html">Calendar</a>
+</OL>
+</div>
+
+<div id="CollapseMenu0Block4">
+<div id="CollapseMenu0Block4Item"><a href="javascript:collapse.toggle(4)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Miscellaneous</a></div>
+<div id="CollapseMenu0Block4Content">
+<OL>
+<LI><a href="../index.html">DynAPI</a></td></tr>
+<LI><a href="/cgi-bin/dynduo/downloads.pl')">Downloads</a></td></tr>
+<LI><a href="/cgi-bin/dynduo/forum.pl">DHTML Forum</a></td></tr>
+<LI><a href="../links.html">Links</a></td></tr>
+<LI><a href="mailto:dynduo@dansteinman.com">Email Dan Steinman</a></td></tr>
+</OL>
+</div>
+
+<script language="JavaScript">
+document.write(collapse.divEnd)
+</script>
+
+<script language="JavaScript">
+document.write(myscroll.divEnd)
+</script>
+
+</body>
+</html>

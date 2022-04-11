@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>DynAPI Examples - List Object Demo 2 [Multiple Columns]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript">
+
+function init() {
+	mylist.activate()
+}
+
+mylist = new List(100,100,150)
+mylist.setCols(50,50,50)
+mylist.add('zero','item','0','zero')
+mylist.add('one','item','1','one')
+mylist.add('two','item','2','two')
+mylist.add('three','item','3','three')
+mylist.add('four','item','4','four')
+mylist.build()
+
+writeCSS (
+mylist.css
+)
+
+function showValue() {
+	if (mylist.multiSelect==false) alert('Selected Index is: '+mylist.selectedIndex+'\nSelected Value is: '+mylist.value)
+	else {
+		var str = 'Selected Indexes are:\n'
+		for (i=0;i<mylist.items.length;i++) {
+			if (mylist.items[i].selected) str += i+'\n'
+		}
+		alert(str)
+	}
+}
+
+function makeMulti() {
+	mylist.multiSelect = true
+}
+function makeSingle() {
+	for (var i=0;i<mylist.items.length;i++) {
+		if (mylist.items[i].selected) mylist.deselect(i)
+	}
+	mylist.multiSelect = false
+}
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<a href="javascript:makeMulti()">make multi-select</a>
+<br><a href="javascript:makeSingle()">make single-select</a>
+<br><a href="javascript:showValue()">show value</a>
+
+<script language="JavaScript">
+document.write(mylist.div)
+</script>
+
+</body>
+</html>

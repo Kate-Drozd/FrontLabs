@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollBar Demo [images]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scrollbar.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+	vbar.activate()
+	hbar.activate()
+	vbar2.activate()
+	hbar2.activate()
+	
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+function mouseDown(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	
+	// other mouseDown code
+	return true
+}
+function mouseMove(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseMove code
+	return true
+}
+function mouseUp(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseUp code
+	return true
+}
+
+vbar = new ScrollBar(260,30,16,180,16,34)
+vbar.setImages('scroll-bgv.gif','scroll-boxv.gif',null,'../../images/scroll2/windows/')
+vbar.build()
+
+hbar = new ScrollBar(30,30,200,16,34,16)
+hbar.setImages('scroll-bgh.gif','scroll-boxh.gif',null,'../../images/scroll2/windows/')
+hbar.build()
+
+vbar2 = new ScrollBar(290,30,16,180,16,19)
+vbar2.setImages('scroll-bgv.gif','scroll-boxv.gif','scroll-sdv.gif','../../images/scroll2/mac/')
+vbar2.build()
+
+hbar2 = new ScrollBar(30,60,200,16,19,16)
+hbar2.setImages('scroll-bgh.gif','scroll-boxh.gif','scroll-sdh.gif','../../images/scroll2/mac/')
+hbar2.build()
+
+writeCSS(
+vbar.css+
+hbar.css+
+vbar2.css+
+hbar2.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(vbar.div)
+document.write(hbar.div)
+document.write(vbar2.div)
+document.write(hbar2.div)
+</script>
+
+</body>
+</html>

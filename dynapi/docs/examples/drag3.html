@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>DynAPI Examples - Drag Object Demo 3</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../js/drag.js"></script>
+<script language="JavaScript">
+
+function init() {
+	// initialize DynLayers
+	DynLayerInit()
+	
+	// add the draggable layers to the drag object
+	drag.add(blue,green)
+	
+	drag.addTargets(redtarget,yellowtarget)
+	
+	drag.onDragStart = dragStart
+	drag.onDragMove = dragMove
+	drag.onDragEnd = dragEnd
+	
+	drag.onDragDrop = hitTarget
+		
+	initMouseEvents()
+}
+
+function dragStart(x,y) {
+	document.myform.id.value = this.obj.id
+	document.myform.state.value = "moving"
+}
+function dragMove(x,y) {
+	document.myform.layerx.value = this.obj.x
+	document.myform.layery.value = this.obj.y
+}
+function dragEnd(x,y) {
+	document.myform.state.value = "static"
+}
+
+function hitTarget() {
+	alert("Congratulations!!\n\nYou dropped "+this.obj.id+" on "+this.targetHit.id)
+}
+
+</script>
+<style type="text/css">
+<!--
+#blueDiv {position:absolute; left:200; top:25; width:50; height:50; clip:rect(0,50,50,0); background-color:blue; layer-background-color:blue;}
+#greenDiv {position:absolute; left:375; top:25; width:50; height:50; clip:rect(0,50,50,0); background-color:green; layer-background-color:green;}
+#redtargetDiv {position:absolute; left:225; top:175; width:10; height:10; clip:rect(0,10,10,0); background-color:red; layer-background-color:red;}
+#yellowtargetDiv {position:absolute; left:390; top:175; width:50; height:50; clip:rect(0,50,50,0); background-color:yellow; layer-background-color:yellow;}
+#draglayers {position:absolute; left:275; top:35;}
+#droptargets {position:absolute; left:275; top:175;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<form name="myform">
+Information about the drag layer:
+<br>ID: <input name="id" type="text" size=10>
+<br>state: <input name="state" type="text" size=10>
+<br>x: <input name="layerx" type="text" size=4>
+<br>y: <input name="layery" type="text" size=4>
+</form>
+
+<div id="blueDiv"></div>
+<div id="greenDiv"></div>
+
+<div id="redtargetDiv"></div>
+<div id="yellowtargetDiv"></div>
+
+<div id="draglayers">Drag Layers</div>
+<div id="droptargets">Drop Targets</div>
+
+</body>
+</html>

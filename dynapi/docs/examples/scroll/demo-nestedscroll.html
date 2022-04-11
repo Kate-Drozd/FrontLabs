@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo [Nested Scrolls]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	// must manually set the height if you use only layers
+	myscroll.setHeight(400)
+	nestedscroll1.setHeight(400)
+	nestedscroll2.activate()
+}
+
+myscroll = new Scroll(100,50,350,220)
+myscroll.setDimensions(0,0,15,myscroll.h,14,15,29,1)
+myscroll.clipImages = false
+myscroll.setImages('scroll-img-box0.gif','scroll-img-box1.gif','scroll-img-up0.gif','scroll-img-up1.gif','scroll-img-dn0.gif','scroll-img-dn1.gif','scroll-img-bar.gif')
+myscroll.build()
+
+nestedscroll1 = new Scroll(10,10,300,150)
+nestedscroll1.setDimensions(0,0,15,nestedscroll1.h,14,15,29,1)
+nestedscroll1.clipImages = false
+nestedscroll1.setImages('scroll-img-box0.gif','scroll-img-box1.gif','scroll-img-up0.gif','scroll-img-up1.gif','scroll-img-dn0.gif','scroll-img-dn1.gif','scroll-img-bar.gif')
+nestedscroll1.build()
+
+nestedscroll2 = new Scroll(10,10,250,100)
+nestedscroll2.setDimensions(0,0,15,nestedscroll2.h,14,15,29,1)
+nestedscroll2.clipImages = false
+nestedscroll2.setImages('scroll-img-box0.gif','scroll-img-box1.gif','scroll-img-up0.gif','scroll-img-up1.gif','scroll-img-dn0.gif','scroll-img-dn1.gif','scroll-img-bar.gif')
+nestedscroll2.build()
+
+writeCSS (
+myscroll.css+
+nestedscroll1.css+
+nestedscroll2.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(myscroll.divStart)
+document.write(nestedscroll1.divStart)
+document.write(nestedscroll2.divStart)
+</script>
+
+<p>text text text text text text text text text text 
+text text text text text text text text text text 
+text text text text text text text text text text 
+<p>text text text text text text text text text text 
+text text text text text text text text text text 
+text text text text text text text text text text 
+<p>text text text text text text text text text text 
+text text text text text text text text text text 
+text text text text text text text text text text 
+<p>text text text text text text text text text text 
+text text text text text text text text text text 
+text text text text text text text text text text 
+<p>text text text text text text text text text text 
+text text text text text text text text text text 
+text text text text text text text text text text 
+<p>text text text text text text text text text text 
+text text text text text text text text text text 
+text text text text text text text text text text 
+
+<script language="JavaScript">
+document.write(nestedscroll2.divEnd)
+document.write(nestedscroll1.divEnd)
+document.write(myscroll.divEnd)
+</script>
+
+</body>
+</html>

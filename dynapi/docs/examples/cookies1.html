@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>DynAPI Examples - Cookie Functions</title>
+<script language="JavaScript" src="../../js/cookies.js"></script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<P>I know that you have:
+
+<ul>
+
+<script language="JavaScript">
+<!--
+
+var count = readCookie('pagecount')  // read the 'pagecount' cookie
+
+if (count==null) {  // if no cookie
+	document.write("<li>never visiting this page before")
+	count = 0  // set counter to 0
+}
+else {  // if cookie exists
+	document.write("<li>visted this page "+count+" times before")
+}
+
+count = parseInt(count)+1  // increment the counter
+
+saveCookie('pagecount',count,360) // save 'pagecount' cookie for 360 days
+
+//-->
+</script>
+</ul>
+
+<!-- erase the cookie -->
+<p><a href="javascript:deleteCookie('pagecount')">Erase your knowledge about me</a>
+
+<p>[reload to see the results]
+
+</body>
+</html>

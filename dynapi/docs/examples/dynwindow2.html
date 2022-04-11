@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>DynAPI Examples - DynWindow Object [with scroll]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-common.js"></script>
+<script language="JavaScript" src="../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../js/drag.js"></script>
+<script language="JavaScript" src="../../js/dynwindow.js"></script>
+<script language="JavaScript" src="../../js/scroll2.js"></script>
+<script language="JavaScript">
+<!--
+
+onload = init
+function init() {
+	mywindow.activate()
+	initMouseEvents()
+}
+
+mywindow = new DynWindow(170,40,355,300)
+mywindow.setImages('../../images/dynwindow/')
+
+// default title is optional
+mywindow.title = "This is a DynWindow"
+
+// initially hide the window
+mywindow.visibility = 'hidden'
+
+// add scroll
+mywindow.addScroll(16)  // send width of scrollbar, and true if you want to use Horz.
+mywindow.scroll.imgSet('../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+mywindow.scroll.window.setMargins(5,5,5,5)
+
+// set events
+mywindow.onMinimize = new Function("alert('minimize')")
+mywindow.onMaximize = new Function("alert('maximize')")
+mywindow.onClose = new Function("this.lyr.hide()")
+
+mywindow.build()
+
+writeCSS(
+mywindow.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+.DynWindowTitle {font-family:"Helvetica"; font-weight:bold; font-size:12pt; color:black; background-color:transparent; margin-top:3;}
+-->
+</style>
+</head>
+
+<body bgcolor="#c0c0c0">
+
+<p><a href="javascript:{mywindow.lyr.moveTo(170,40);mywindow.lyr.show()}">Open Window</a>
+<br><a href="javascript:mywindow.lyr.hide()">Close Window</a>
+
+<p><a href="javascript:mywindow.scroll.load('dynwindow2-text1.html')">Load Page 1</a>
+<br><a href="javascript:mywindow.scroll.load('dynwindow2-text2.html')">Load Page 2</a>
+
+<script language="JavaScript">
+document.write(mywindow.divStart)
+</script>
+
+<!-- inline content -->
+
+<script language="JavaScript">
+document.write(mywindow.divEnd)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html lang="en">
+<head><title>Массивы</title>
+    <meta charset="UTF-8">
+    <script language="javascript">
+
+		var date = new Date(22, 11, 2021);
+		var age;
+				
+		var stinsdate = prompt("Введите дату рождения");
+		t = stinsdate.split('.');
+		insYear = t[2];
+		insMonth = parseInt(t[1]-1);
+		insDay = parseInt(t[0]);
+		age = prompt("Введите ваш возраст");
+		
+		var insdate = new Date (insDay, insMonth, insYear);
+		var realdate = new Date (date - insdate);
+		
+		realage = realdate.getYear();
+		
+		if (age === realage / (12 * 60 * 1000))
+		{
+		alert ("Yes");
+		}
+		else
+		{
+		alert("No");
+		};
+
+
+
+		
+       
+			
+    </script>
+</head>
+
+</html>

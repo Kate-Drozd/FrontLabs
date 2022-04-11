@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (Mimicing Frames)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	navWindow.activate()
+	contentWindow.activate()
+}
+
+navWindow = new Scroll(111,50,100,150)
+navWindow.setDimensions(0,0,15,navWindow.h,14,15,29,1)
+navWindow.clipImages = false
+navWindow.setImages('scroll-img-box0.gif','scroll-img-box1.gif','scroll-img-up0.gif','scroll-img-up1.gif','scroll-img-dn0.gif','scroll-img-dn1.gif','scroll-img-bar.gif')
+navWindow.build()
+
+contentWindow = new Scroll(225,50,250,150)
+contentWindow.setDimensions(0,0,15,contentWindow.h,14,15,29,1)
+contentWindow.clipImages = false
+contentWindow.setImages('scroll-img-box0.gif','scroll-img-box1.gif','scroll-img-up0.gif','scroll-img-up1.gif','scroll-img-dn0.gif','scroll-img-dn1.gif','scroll-img-bar.gif')
+contentWindow.build()
+
+writeCSS (
+navWindow.css+
+contentWindow.css
+)
+
+//-->
+</script>
+
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(navWindow.divStart)
+</script>
+
+<p><B>Pages:</B>
+
+<p><a href="javascript:contentWindow.load('page1.html')">page1.html</a>
+<p><a href="javascript:contentWindow.load('page2.html')">page2.html</a>
+<p><a href="javascript:contentWindow.load('page3.html')">page3.html</a>
+<p><a href="javascript:contentWindow.load('page1.html')">page1.html</a>
+<p><a href="javascript:contentWindow.load('page2.html')">page2.html</a>
+<p><a href="javascript:contentWindow.load('page3.html')">page3.html</a>
+<p><a href="javascript:contentWindow.load('page1.html')">page1.html</a>
+<p><a href="javascript:contentWindow.load('page2.html')">page2.html</a>
+<p><a href="javascript:contentWindow.load('page3.html')">page3.html</a>
+<p><a href="javascript:contentWindow.load('page1.html')">page1.html</a>
+<p><a href="javascript:contentWindow.load('page2.html')">page2.html</a>
+<p><a href="javascript:contentWindow.load('page3.html')">page3.html</a>
+<p><a href="javascript:contentWindow.load('page1.html')">page1.html</a>
+<p><a href="javascript:contentWindow.load('page2.html')">page2.html</a>
+<p><a href="javascript:contentWindow.load('page3.html')">page3.html</a>
+<p><a href="javascript:contentWindow.load('page1.html')">page1.html</a>
+<p><a href="javascript:contentWindow.load('page2.html')">page2.html</a>
+<p><a href="javascript:contentWindow.load('page3.html')">page3.html</a>
+
+<script language="JavaScript">
+document.write(navWindow.divEnd)
+</script>
+
+<script language="JavaScript">
+document.write(contentWindow.divStart)
+</script>
+
+Click the links on the left to load pages into this window
+
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+<br>Click the links on the left to load pages into this window
+
+<script language="JavaScript">
+document.write(contentWindow.divEnd)
+</script>
+
+</body>
+</html>

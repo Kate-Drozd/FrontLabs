@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (Images)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myscroll.load('text1.html')
+}
+
+// Initialize Scroll Object
+myscroll = new Scroll(100,50,350,220)
+// made the arrowup (14) and box (29) 1 less than the actual image, and set
+// clipImages to false so that the box would overlap the arrows by one pixel
+myscroll.setDimensions(0,0,15,myscroll.h,14,15,29,1)
+myscroll.clipImages = false
+// setImages() should be called after setDimensions()
+myscroll.setImages('scroll-img-box0.gif','scroll-img-box1.gif','scroll-img-up0.gif','scroll-img-up1.gif','scroll-img-dn0.gif','scroll-img-dn1.gif','scroll-img-bar.gif')
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

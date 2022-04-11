@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Slide Methods Demo]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+	mylayer.slideInit()
+}
+
+seq1 = 0
+function sequence1() {
+	seq1++
+	if (seq1==1) {
+		mylayer.moveTo(250,50)
+		mylayer.slideTo(300,null,10,20,'sequence1()')
+	}
+	else if (seq1==2) mylayer.slideTo(null,100,10,20,'sequence1()')
+	else if (seq1==3) mylayer.slideTo(250,null,10,20,'sequence1()')
+	else if (seq1==4) mylayer.slideTo(null,50,10,20,'sequence1()')
+	else seq1 = 0
+}
+
+seq2 = 0
+function sequence2() {
+	seq2++
+	if (seq2==1) mylayer.slideBy(50,0,10,20,'sequence2()')
+	else if (seq2==2) mylayer.slideBy(0,50,10,20,'sequence2()')
+	else if (seq2==3) mylayer.slideBy(-50,0,10,20,'sequence2()')
+	else if (seq2==4) mylayer.slideBy(0,-50,10,20,'sequence2()')
+	else seq2 = 0
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:250; top:50; width:50; height:50; clip:rect(0,50,50,0); layer-background-color:#C0C0C0; background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+SlideTo() Examples:
+<br><a href="javascript:mylayer.slideTo(200,0,17,20)">slide to (200,0)</a>
+<br><a href="javascript:mylayer.slideTo(300,0,10,20)">slide to (300,0)</a>
+<br><a href="javascript:mylayer.slideTo(200,100,10,20)">slide to (200,100)</a>
+<br><a href="javascript:mylayer.slideTo(300,null,10,20)">slide to (300,null)</a>
+<br><a href="javascript:mylayer.slideTo(250,150,5,10,'setTimeout(\'mylayer.slideTo(290,127,5,10)\',50)')">slide to (250,150) then to (290,127)</a>
+<br><a href="javascript:sequence1()">SlideTo square sequence</a>
+
+<p>SlideBy() Examples:
+<br><a href="javascript:mylayer.slideBy(-100,0,10,20)">slide by (-100,0)</a> left
+<br><a href="javascript:mylayer.slideBy(100,0,10,20)">slide by (100,0)</a> right
+<br><a href="javascript:mylayer.slideBy(0,-100,10,20)">slide by (0,-100)</a> up
+<br><a href="javascript:mylayer.slideBy(0,100,10,20)">slide by (0,100)</a> down
+<br><a href="javascript:mylayer.slideBy(100,100,10,20)">slide by (100,100)</a> diagonal
+<br><a href="javascript:mylayer.slideBy(-100,-100,10,20)">slide by (-100,-100)</a> diagonal
+<br><a href="javascript:mylayer.slideBy(77,-24,10,20,'setTimeout(\'mylayer.slideBy(50,82,8,10)\',500)')">slide by (77,-24) then by (50,82)</a>
+<br><a href="javascript:sequence2()">SlideBy square sequence</a>
+
+</body>
+</html>

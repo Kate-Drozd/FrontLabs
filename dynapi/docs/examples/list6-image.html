@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>DynAPI Examples - List Object Demo 5 [Image Option]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript">
+
+function init() {
+	mylist.activate()
+}
+
+mylist = new List(100,100,150,20)
+mylist.add("item 0",'zero')
+mylist.add("item 1",'one')
+mylist.add("item 2",'two')
+mylist.add("item 3",'three')
+mylist.add("item 4",'four')
+
+mylist.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+mylist.items[0].hasImage = true
+
+mylist.build()
+
+writeCSS (
+mylist.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(mylist.div)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>DynAPI Examples - Hover Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/hover.js"></script>
+<script language="JavaScript">
+<!--
+
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+	mylayer.hover = new Hover("mylayer","hover")
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:200; top:150; width:50; height:50; clip:rect(0,50,50,0); background-color:#C0C0C0; layer-background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+Hover:
+<br><a href="javascript:mylayer.hover.play(60,8,0,null,'v',10)">play</a> (loop)
+<br><a href="javascript:mylayer.hover.play(60,8,0,1,'v',10)">play</a> (one cycle)
+<br><a href="javascript:mylayer.hover.pause()">pause</a>
+<br><a href="javascript:mylayer.hover.stop()">stop</a>
+
+</body>
+</html>

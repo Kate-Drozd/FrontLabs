@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollBar Demo [zoom]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scrollbar.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+	mybar.activate()
+	
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+function mouseDown(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	
+	// other mouseDown code
+	return true
+}
+function mouseMove(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseMove code
+	return true
+}
+function mouseUp(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseUp code
+	return true
+}
+
+function moveBigImage() {
+	// The difference between the width/height of the big image
+	// and the width/height of the 'mywindowDiv' layer is 300.
+	var x = -mybar.getXfactor()*300
+	var y = -mybar.getYfactor()*300
+	mycontent.moveTo(x,y)
+}
+
+mybar = new ScrollBar(210,70,60,60,20,20)
+mybar.setImages(null,'../../images/misc/scrollbar-zoombox.gif','../../images/misc/galaxy-small.jpg')
+mybar.build()
+mybar.onScroll = moveBigImage
+
+writeCSS(
+mybar.css+
+css('mywindowDiv',30,30,150,150)+
+css('mycontentDiv',0,0)
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="mywindowDiv">
+<div id="mycontentDiv"><img src="../../images/misc/galaxy.jpg" width=450 height=450></div>
+</div>
+
+<script language="JavaScript">
+document.write(mybar.div)
+</script>
+
+</body>
+</html>

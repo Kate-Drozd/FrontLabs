@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (Nested)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myscroll.load('text1.html')
+}
+
+myscroll = new Scroll(20,20,250,160)
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+#nestbox {position:absolute; left:100; top:50; width:300; height:200; clip:rect(0,300,200,0); background-color:yellow; layer-background-color:yellow;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="nestbox">
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>DynAPI Examples - SelectList Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript" src="../../js/selectlist.js"></script>
+<script language="JavaScript">
+
+function init() {
+	myselect.activate()
+}
+
+myselect = new SelectList(100,100,150,18)
+myselect.list.add('../../lessons/en/selectlist.html','Back to List Object')
+myselect.list.add('../../index.html','DynDuo Home')
+myselect.list.add('mailto:dynduo@dansteinman.com','Email Me')
+myselect.list.preSelect = 2  // preselect index number 2
+myselect.setImage('../../images/select-imgL.gif','../../images/select-imgM.gif','../../images/select-imgR.gif',10,18)
+myselect.build()
+
+myselect.onSelect = SelectListRedirect
+
+writeCSS(
+myselect.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(myselect.div)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll v2 Demo [Image Sets]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../../js/scroll2.js"></script>
+<script language="Javascript">
+<!--
+
+onload=init
+function init() {
+	windows.activate()
+	nextstep.activate()
+	metal.activate()
+	mac.activate()
+	
+	initMouseEvents()
+}
+
+windows = new Scroll(20,20,250,170)
+windows.useH = true
+windows.imgSet('../../../images/scroll2/windows/',16,16,34)
+windows.build()
+
+nextstep = new Scroll(300,20,250,170)
+nextstep.useH = true
+nextstep.drawBorder = true
+nextstep.imgSet('../../../images/scroll2/nextstep/',20,19,45,0,1,0,1,1,1)
+nextstep.window.setMargins(10,10,10,10)
+nextstep.build()
+
+metal = new Scroll(20,250,250,170)
+metal.useH = true
+metal.drawBorder = true
+metal.imgSet('../../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+metal.window.setMargins(10,10,10,10)
+metal.build()
+
+mac = new Scroll(300,250,250,170)
+mac.useH = true
+mac.drawBorder = true
+mac.overlap = 1
+mac.imgSet('../../../images/scroll2/mac/',16,16,19,-1,5,-1,5,1,1,1,1)
+mac.window.setMargins(10,10,10,10)
+mac.build()
+
+writeCSS (
+windows.css+
+nextstep.css+
+metal.css+
+mac.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(windows.divStart)
+</script>
+
+<table width="400" border="0" cellspacing="0" cellpadding="0"><tr><td>
+<h3>Windows Image Set</h3>
+
+<p>imgSet('/windows/',16,16,34)
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+</td></tr></table>
+
+<script language="JavaScript">
+document.write(windows.divEnd)
+</script>
+
+<script language="JavaScript">
+document.write(nextstep.divStart)
+</script>
+
+<table width="400" border="0" cellspacing="0" cellpadding="0"><tr><td>
+<h3>NeXTSTEP Image Set</h3>
+
+<p>imgSet('/nextstep/',20,19,45,0,1,0,1,1,1)
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+</td></tr></table>
+
+<script language="JavaScript">
+document.write(nextstep.divEnd)
+</script>
+
+<script language="JavaScript">
+document.write(metal.divStart)
+</script>
+
+<table width="400" border="0" cellspacing="0" cellpadding="0"><tr><td>
+
+<h3>Java Metal Image Set</h3>
+
+<p>imgSet('/metal/',16,16,37,-1,2,-1,2,1,1)
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+</td></tr></table>
+
+<script language="JavaScript">
+document.write(metal.divEnd)
+</script>
+
+<script language="JavaScript">
+document.write(mac.divStart)
+</script>
+
+<table width="400" border="0" cellspacing="0" cellpadding="0"><tr><td>
+
+<h3>MacIntosh Image Set</h3>
+
+<p>imgSet('/mac/',16,16,19,-1,5,-1,5,1,1,1,1)
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+
+<p>
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 This is page 1 
+</p>
+</td></tr></table>
+
+<script language="JavaScript">
+document.write(mac.divEnd)
+</script>
+
+</body>
+</html>

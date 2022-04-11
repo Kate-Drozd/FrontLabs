@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll v2 Demo [bottom frame]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/scroll2.js"></script>
+<script language="Javascript">
+<!--
+
+onload=init
+function init() {
+	
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+function mouseDown(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	if (ScrollTestActive()) return false
+	
+	// other mouseDown code
+	return true
+}
+function mouseMove(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	if (ScrollTestActive()) return false
+
+	// other mouseMove code
+	return true
+}
+function mouseUp(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseUp code
+	return true
+}
+
+// send frame name in constructor
+myscroll = new Scroll(150,50,250,170,'myframe')
+myscroll.useH = true
+myscroll.imgSet('../../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript:myscroll.load('text-frames.html')">text-frames.html</a> (calls to window.top.myframe.myscroll.activate())
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

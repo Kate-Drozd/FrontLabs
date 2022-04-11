@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>top frame</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+is.ns = (document.layers)? true:false
+is.ie = (document.all)? true:false
+
+loaded = false
+
+function init() {
+	loaded = true
+}
+
+// setDynLayers called from dynlayer-frame1-bottom.html
+function setDynLayers() {
+	// DynLayerInit will not find the the nestref parameter
+	// on it's own so it must be passed to the DynLayer constructor
+	mylayer = new DynLayer("mylayerDiv",null,parent.bottomFrame)
+	mynest1 = new DynLayer("mynest1Div",null,parent.bottomFrame)
+	mynest2 = new DynLayer("mynest2Div","mynest1Div",parent.bottomFrame)
+	mynest3 = new DynLayer("mynest3Div","mynest1Div.document.mynest2Div",parent.bottomFrame)
+}
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+Check for existance of DynLayers:
+<p><a href="javascript:alert(mylayer)">mylayer</a>
+<br><a href="javascript:alert(mynest1)">mynest1</a>
+<br><a href="javascript:alert(mynest2)">mynest2</a>
+<br><a href="javascript:alert(mynest3)">mynest3</a>
+
+</body>
+</html>

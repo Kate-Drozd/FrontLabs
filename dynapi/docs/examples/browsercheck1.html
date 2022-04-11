@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>DynAPI Examples - Browser Check Example</title>
+<script language="JavaScript" src="../../js/browsercheck.js"></script>
+</head>
+
+<body bgcolor="#ffffff">
+
+Here are the results of the BrowserCheck Object:
+
+<p><table border=1>
+<tr><td><b>Test For</td><td><font color='red'><b>Command</font></td><td><font color='blue'><b>Result for your Browser</font></td></tr>
+<script language="JavaScript">
+
+str = "<tr><td>Browser</td><td><font color='red'>is.b</font></td><td><font color='blue'>"+ is.b +"</font></td></tr>"+
+"<tr><td>Version</td><td><font color='red'>is.v</font></td><td><font color='blue'>"+ is.v +"</font></td></tr>"+
+"<tr><td>Netscape 4 or 5</td><td><font color='red'>is.ns</font></td><td><font color='blue'>"+ is.ns +"</font></td></tr>"+
+"<tr><td>Netscape 4 only</td><td><font color='red'>is.ns4</font></td><td><font color='blue'>"+ is.ns4 +"</font></td></tr>"+
+"<tr><td>Netscape 5 only</td><td><font color='red'>is.ns5</font></td><td><font color='blue'>"+ is.ns5 +"</font></td></tr>"+
+"<tr><td>IE 4 or 5</td><td><font color='red'>is.ie</font></td><td><font color='blue'>"+ is.ie +"</font></td></tr>"+
+"<tr><td>IE 4 only</td><td><font color='red'>is.ie4</font></td><td><font color='blue'>"+ is.ie4 +"</font></td></tr>"+
+"<tr><td>IE 5 only</td><td><font color='red'>is.ie5</font></td><td><font color='blue'>"+ is.ie5 +"</font></td></tr>"+
+"<tr><td>IE 4,5 or NS 4,5</td><td><font color='red'>is.min</font></td><td><font color='blue'>"+ is.min +"</font></td></tr>"
+
+document.write(str)
+</script>
+
+</table>
+
+</body>
+</html>

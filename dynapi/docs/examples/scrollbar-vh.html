@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollBar Demo [vertical/horizontal]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scrollbar.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+	vbar.activate()
+	hbar.activate()
+	
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+function mouseDown(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	
+	// other mouseDown code
+	return true
+}
+function mouseMove(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseMove code
+	return true
+}
+function mouseUp(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseUp code
+	return true
+}
+
+vbar = new ScrollBar(220,30,30,180,30,30)
+vbar.bgColor = "#c0c0c0"
+vbar.boxColor = "#808080"
+vbar.build()
+
+hbar = new ScrollBar(30,220,180,30,30,30)
+hbar.bgColor = "#c0c0c0"
+hbar.boxColor = "#808080"
+hbar.build()
+
+writeCSS(
+vbar.css+
+hbar.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(vbar.div)
+document.write(hbar.div)
+</script>
+
+</body>
+</html>

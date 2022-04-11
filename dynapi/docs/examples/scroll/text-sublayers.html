@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Sublayers</title>
+</head>
+
+<body onLoad="if (parent.Scroll) {parent.myscroll.activate(); parent.loadSubLayer();}">
+
+<!-- Note I used inline CSS to define the layers
+
+<div id="nest1" STYLE="position:absolute; left:20; top:20; width:140; height:140; clip:rect(0,140,140,0); background-color:#757575; layer-background-color:#757575;">
+<div id="nest2" STYLE="position:absolute; left:20; top:20; width:100; height:100; clip:rect(0,100,100,0); background-color:#9C9C9C; layer-background-color:#9C9C9C;">
+
+<div id="sublayerDiv" STYLE="position:absolute; left:20; top:20; width:60; height:60; clip:rect(0,60,60,0); background-color:#C0C0C0; layer-background-color:#C0C0C0;">sublayer</div>
+
+</div>
+</div>
+
+</body>
+</html>

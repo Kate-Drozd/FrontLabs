@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>DynAPI Examples - Button Image Object Demo [mini]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/buttonimage-mini.js"></script>
+<script language="JavaScript">
+<!--
+
+onload = init
+function init() {
+	mybutton1.activate()
+}
+
+mybutton1 = new ButtonImage(50,50,20,20)
+mybutton1.setImages('buttonimage0.gif','buttonimage1.gif','../../images/')
+mybutton1.build()
+
+writeCSS(
+mybutton1.css
+)
+
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(mybutton1.div)
+</script>
+
+</body>
+</html>

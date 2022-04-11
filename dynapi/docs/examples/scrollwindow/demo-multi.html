@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollWindow Demo [inline multiple blocks]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/scrollwindow.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+	mywin.activate()
+}
+
+mywin = new ScrollWindow(200,50,250,200)
+mywin.inlineBlocks = 4
+mywin.build()
+
+writeCSS(
+mywin.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript://" onMouseDown="mywin.up(); return false" onMouseUp="mywin.stop()" onMouseOut="mywin.stop()">up</a>
+<br><a href="javascript://" onMouseDown="mywin.down(); return false" onMouseUp="mywin.stop()" onMouseOut="mywin.stop()">down</a>
+
+<p><a href="javascript:mywin.showBlock(0)">show block 0</a>
+<br><a href="javascript:mywin.showBlock(1)">show block 1</a>
+<br><a href="javascript:mywin.showBlock(2)">show block 2</a>
+<br><a href="javascript:mywin.showBlock(3)">show block 3</a>
+
+<script language="JavaScript">
+document.write(mywin.divStart)
+</script>
+
+<div id="ScrollWindow0Block0">
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. 
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. 
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. 
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. 
+</div>
+
+<div id="ScrollWindow0Block1">
+<p>This is block 1. This is block 1. This is block 1.
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. 
+<p>This is block 1. This is block 1. This is block 1.
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1
+</div>
+
+<div id="ScrollWindow0Block2">
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. 
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. 
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. 
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. 
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. 
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2
+</div>
+
+<div id="ScrollWindow0Block3">
+<p>This is block 3. This is block 3. This is block 3. This is block 3. This is block 3. This is block 3. 
+</div>
+
+<script language="JavaScript">
+document.write(mywin.divEnd)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollWindow Demo [methods]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/scrollwindow.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+}
+
+mywindow = new ScrollWindow(240,60,250,200)
+mywindow.bgColor = "#c0c0c0"
+mywindow.border = 2
+mywindow.setMargins(10,10,10,10)
+mywindow.build()
+
+mywindow.onScroll = showFactors
+mywindow.onLoad = finishLoad
+
+function showFactors() {
+	document.myform.xfactor.value = this.getXfactor()
+	document.myform.yfactor.value = this.getYfactor()
+}
+
+function finishLoad() {
+	document.myform.url.value = this.url
+}
+
+writeCSS(
+mywindow.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript:mywindow.load('text-methods1.html')">load page 1</a>
+<br><a href="javascript:mywindow.load('text-methods2.html')">load page 2</a>
+
+<p><a href="javascript:mywindow.back()">back</a>
+<br><a href="javascript:mywindow.forward()">forward</a>
+
+<p>Scroll:
+<br><a href="javascript://" onMouseDown="mywindow.up(); return false" onMouseUp="mywindow.stop()" onMouseOut="mywindow.stop()">up</a>
+<br><a href="javascript://" onMouseDown="mywindow.down(); return false" onMouseUp="mywindow.stop()" onMouseOut="mywindow.stop()">down</a>
+<br><a href="javascript://" onMouseDown="mywindow.left(); return false" onMouseUp="mywindow.stop()" onMouseOut="mywindow.stop()">left</a>
+<br><a href="javascript://" onMouseDown="mywindow.right(); return false" onMouseUp="mywindow.stop()" onMouseOut="mywindow.stop()">right</a>
+
+<p><a href="javascript:mywindow.jumpTo(20,50)">jumpTo(20,50)</a>
+
+<p><a href="javascript:mywindow.lyr.moveTo(220,50)">moveTo(220,50)</a>
+<br><a href="javascript:mywindow.lyr.moveTo(240,60)">moveTo(240,60)</a>
+<br><a href="javascript:mywindow.lyr.moveTo(260,70)">moveTo(260,70)</a>
+
+<form name="myform">
+Info:
+<br>X Factor: <input name="xfactor" type="text" size=15>
+<br>Y Factor: <input name="yfactor" type="text" size=15>
+<br>URL: <input name="url" type="text" size=20>
+</form>
+
+<script language="JavaScript">
+document.write(mywindow.div)
+</script>
+
+</body>
+</html>

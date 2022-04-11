@@ -1,0 +1,99 @@
+
+<html>
+
+<head>
+    <title>3.2.3</title>
+    <meta charset="UTF-8">
+    <script language="JavaScript">
+
+        //Цельсий-Фаренгейт
+        function inputCels() {
+            var cels = prompt("Введите значение температуры в градусах по цельсию", "Введите температуру");
+            ansFah = doFahCalc(cels);
+            alert(cels + " градусов по Цельсию равно " + ansFah + " градусов по Фаренгейту");
+        }
+
+        //Фаренгейт-Цельсий
+        function inputFah() {
+            var fah = prompt("Введите значение температуры в градусах по Фаренгейту", "Введите температуру");
+            ansCel = doCelCalc(fah);
+            alert(fah + " градусов по Фаренгейту равно " + ansCel + " градусов по Цельсию");
+        }
+
+        //Цельсий-Реомюр
+        function inputCelR() {
+            var fah = prompt("Введите значение температуры в градусах по Цельсию", "Введите температуру");
+            ansCel = doCelRCalc(fah);
+            alert(fah + " градусов по Цельсию равно " + ansCel + " градусов по Реомюру");
+        }
+
+        //Фаренгейт-Реомюр
+        function inputFahR() {
+            var fah = prompt("Введите значение температуры в градусах по Фаренгейту", "Введите температуру");
+            ansCel = doFaReCalc(fah);
+            alert(fah + " градусов по Фаренгейту равно " + ansCel + " градусов по Реомюру");
+        }
+
+        //Реомюр-Цельсий
+        function inputReC() {
+            var fah = prompt("Введите значение температуры в градусах по Реомюру", "Введите температуру");
+            ansCel = doReCelCalc(fah);
+            alert(fah + " градусов по Реомюру равно " + ansCel + " градусов по Цельсию");
+        }
+
+        //Реомюр-Фаренгейт
+        function inputReF() {
+            var fah = prompt("Введите значение температуры в градусах по Реомюру", "Введите температуру");
+            ansCel = doReFarCalc(fah);
+            alert(fah + " градусов по Реомюру равно " + ansCel + " градусов по Фаренгейту");
+        }
+
+
+        //Цельсий-Фаренгейт
+        function doCelCalc(fah) {
+            var ans = ((Number(fah) - 32) / 1.8);
+            return (ans);
+        }
+        //Фаренгейт-Цельсий
+        function doFahCalc(cels) {
+            var ans = ((1.8 * Number(cels)) + 32);
+            return (ans);
+        }
+        //Цельсий-Реомюр
+        function doCelRCalc(cels) {
+            var ans = ((4 * Number(cels)) / 5);
+            return (ans);
+        }
+        //Фаренгейт-Реомюр
+        function doFaReCalc(cels) {
+            var ans = ((4 * Number(cels)) / 9);
+            return (ans);
+        }
+        //Реомюр-Цельсий
+        function doReCelCalc(cels) {
+            var ans = ((5 * Number(cels)) / 4);
+            return (ans);
+        }
+        //Реомюр-Фаренгейт
+        function doReFarCalc(cels) {
+            var ans = ((9 * Number(cels)) / 4);
+            return (ans);
+        }
+    </script>
+</head>
+
+<body>
+<input type="button" value="Переход от градусов по Цельсию к градусам по Фаренгейту" onClick="inputCels();">
+<br><br>
+<input type="button" value="Переход от градусов по Фаренгейту к градусам по Цельсию" onClick="inputFah();">
+<br><br>
+<input type="button" value="Переход от градусов по Цельсию к градусам по Реомюру" ondblclick="inputCelR();">
+<br><br>
+<input type="button" value="Переход от градусов по Фаренгейту к градусам по Реомюру" ondblclick="inputFahR();">
+<br><br>
+<input type="button" value="Переход от градусов по Реомюру к градусам по Цельсию" ondblclick="inputReC();">
+<br><br>
+<input type="button" value="Переход от градусов по Реомюру к градусам по Фаренгейту" ondblclick="inputReF();">
+</body>
+
+</html>

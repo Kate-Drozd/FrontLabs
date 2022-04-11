@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>DynAPI Examples - Argument Passing Functions 1 [bottom frame]</TITLE>
+<META NAME="Author" CONTENT="Noah Slater">
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript" src="../../js/passargs.js"></SCRIPT>
+
+<BODY BGCOLOR="#FFFFFF">
+
+pass arguments to 'passargs1-page2.html' using passArgs():
+<blockquote>
+<a href="javascript:passArgs('passargs1-page2.html','top','one','two','three')">
+	target:top,one,two,three
+</a><br>
+<a href="javascript:passArgs('passargs1-page2.html','frame:topframe','a','b','c')">
+	target:topframe,one,two,three
+</a><br>
+<a href="javascript:passArgs('passargs1-page2.html','blank','java','script','kicks ass')">
+	target:blank,java,script,kicks ass
+</a><br>
+</blockquote>
+
+<p>pass arguments to 'passargs1-page2.html' using returnArgs():
+
+<blockquote>
+<SCRIPT LANGUAGE="JavaScript">
+document.write('<a href="'+returnArgs('passargs1-page2.html','one','two','three')+'">one,two,three</a>')
+</SCRIPT>
+</blockquote>
+
+</BODY>
+</HTML>

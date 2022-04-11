@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>DynAPI Examples - Tabs Object Demo 1</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-common.js"></script>
+<script language="JavaScript" src="../../js/miniscroll.js"></script>
+<script language="JavaScript" src="../../js/tabs.js"></script>
+<script language="JavaScript">
+<!--
+
+onload = init
+function init() {
+	mytabs.activate()
+	mytabs2.activate()
+}
+
+mytabs = new Tabs(50,50,350,20)
+mytabs.setImages(5,3,3,16,'../../images/')
+mytabs.addItems("Item 1","Item Number 2","Item Three","Item No. 4","Item #5","Item VI","Item 0x07")
+mytabs.build()
+
+mytabs2 = new Tabs(50,150,350,20)
+mytabs2.setImages(5,3,3,16,'../../images/')
+mytabs2.addItems("Item 1","Item Number 2","Item Three")
+mytabs2.build()
+
+writeCSS(
+mytabs.css+
+mytabs2.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+.TabsStyle {text-decoration:none; font-family:"Helvetica"; font-weight:bold; font-size:12pt; color:black; background-color:transparent; margin-top:3;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" alink="#000000">
+
+<script language="JavaScript">
+document.write(mytabs.div)
+</script>
+
+<script language="JavaScript">
+document.write(mytabs2.div)
+</script>
+
+</body>
+</html>

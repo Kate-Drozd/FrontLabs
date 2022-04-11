@@ -1,0 +1,18 @@
+<html>
+<head><title>3.1.6</title>
+    <meta charset="UTF-8">
+    <script language="JavaScript">
+        var myarray = new Array("","","","","");
+        var y=-1, ys="", extent1=".gif", extent2=".jpg";
+        for (x in myarray)
+        {
+            y++;
+            ys=y;
+            myarray[x] = "\n<a src=\"../image1/img" + x +".jpg\""+">рис."+ys+"</a>";
+        }
+        alert("Ссылки на мои картинки jpg-формата:"+myarray);
+
+    </script>
+</head>
+<body></body>
+</html>

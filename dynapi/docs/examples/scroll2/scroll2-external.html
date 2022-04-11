@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll v2 Demo [external, vertical/horizontal]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../../js/scroll2.js"></script>
+<script language="Javascript">
+<!--
+
+onload=init
+function init() {
+	initMouseEvents()
+}
+
+myscroll = new Scroll(150,50,250,170)
+myscroll.useH = true
+myscroll.imgSet('../../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript:myscroll.load('text1.html')">text1.html</a>
+<br><a href="javascript:myscroll.load('text2.html')">text2.html</a>
+<br><a href="javascript:myscroll.load('text3.html')">text3.html</a>
+
+<br><a href="javascript:myscroll.window.back()">back</a>
+<br><a href="javascript:myscroll.window.forward()">forward</a>
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

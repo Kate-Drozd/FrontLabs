@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>DynAPI Examples - News Ticker Object Demo 2</title>
+<script lanuage="JavaScript" src="../../js/dynlayer.js"></script>
+<script lanuage="JavaScript" src="../../js/newsticker.js"></script>
+<script lanuage="JavaScript">
+<!--
+
+onload = init
+function init() {
+	ticker.activate(false)
+}
+
+var i0 = '<span class="tickerstyle"><b>Today\'s Lotto Numbers:</b>'+
+'<br>Lotto 649: 3 14 18 22 34 39'+
+'<br>Encore: 1 4 7 7 9 3'+
+'<br>Pick 3: 6 9 5'+
+'</span>'
+
+var i1 = '<span class="tickerstyle"><b>Tomorrow\'s Lotto Numbers:</b>'+
+'<br>Lotto 649: 11 15 19 29 31 33'+
+'<br>Encore: 8 8 7 2 3 3 2'+
+'<br>Pick 3: 9 3 7'+
+'<br>(yes this is a smart news ticker)'+
+'</span>'
+
+var i2 = '<span class="tickerstyle"><b>Tonight\'s Weather:</b>'+
+'<br>Partly cloudy, dry'+
+'<br>Temperature: 33<font size="-1">&#176;C (76&#176;F)</font>'+
+'<br>Humidex: 40<font size="-1">&#176;C (80&#176;F)</font>'+
+'<br>Wind: 3 <font size="-1">km/h SW</font>'+
+'</span>'
+
+ticker = new NewsTicker(70,80,200,90)
+ticker.addItem(i0)
+ticker.addItem(i1)
+ticker.addItem(i2)
+
+ticker.fromX = 200  // items slide in from +200 (from the right)
+ticker.fromY = -90  // itmes slide in from -90 (from the top)
+
+ticker.build()
+
+writeCSS(
+ticker.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+.tickerstyle {font-family:"Arial"; font-size:11pt; color:#000000;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript:ticker.start()">start</a> - you must manually start the ticker because I set activate(false)
+<br><a href="javascript:ticker.stop()">stop</a>
+
+<script language="JavaScript">
+document.write(ticker.div)
+</script>
+
+</body>
+</html>

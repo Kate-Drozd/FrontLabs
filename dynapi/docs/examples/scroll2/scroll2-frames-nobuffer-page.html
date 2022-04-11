@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll v2 Demo [non-buffered in frames]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/scroll2.js"></script>
+<script language="Javascript">
+<!--
+
+onload=init
+function init() {
+	
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+function mouseDown(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	if (ScrollTestActive()) return false
+	
+	// other mouseDown code
+	return true
+}
+function mouseMove(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	if (ScrollTestActive()) return false
+
+	// other mouseMove code
+	return true
+}
+function mouseUp(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseUp code
+	return true
+}
+
+// frame name
+myscroll = new Scroll(150,50,250,170,'myframe')
+
+myscroll.useH = true
+myscroll.imgSet('../../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+
+// no buffer
+myscroll.window.usebuffer = false
+
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+<style type="text/css">
+.contentStyle {margin-left:20px; margin-top:10px;}
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<a href="javascript:myscroll.load('text-frames-nonbuffer.html')">text-frames-nonbuffer.html</a> (calls to window.top.myframe.myscroll.activate())
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

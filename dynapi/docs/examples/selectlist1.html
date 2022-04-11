@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>DynAPI Examples - SelectList Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript" src="../../js/selectlist.js"></script>
+<script language="JavaScript">
+
+function init() {
+	myselect.activate()
+}
+
+myselect = new SelectList(100,100,150,18)
+myselect.list.add('zero','item 0')
+myselect.list.add('one','item 1')
+myselect.list.add('two','item 2')
+myselect.list.add('three','item 3')
+myselect.list.add('four','item 4')
+myselect.setImage('../../images/select-imgL.gif','../../images/select-imgM.gif','../../images/select-imgR.gif',10,18)
+myselect.build()
+
+writeCSS (
+myselect.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(myselect.div)
+</script>
+
+</body>
+</html>

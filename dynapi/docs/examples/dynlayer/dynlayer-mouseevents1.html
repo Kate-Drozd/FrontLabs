@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Mouse Events]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+
+onload = init
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+
+	mylayer.elm.onmousedown = layerDownHandler
+	mylayer.elm.onmousemove = layerMoveHandler
+	mylayer.elm.onmouseup = layerUpHandler
+	if (is.ns) mylayer.elm.captureEvents(Event.MOUSEDOWN | Event.MOUSEUP | Event.MOUSEMOVE)
+}
+
+function layerDownHandler(e) {
+	var x = (is.ns)? e.layerX:event.offsetX
+	var y = (is.ns)? e.layerY:event.offsetY
+	document.myform.downx.value = x
+	document.myform.downy.value = y
+	return false
+}
+
+function layerMoveHandler(e) {
+	var x = (is.ns)? e.layerX:event.offsetX
+	var y = (is.ns)? e.layerY:event.offsetY
+	document.myform.movex.value = x
+	document.myform.movey.value = y
+	return false
+}
+
+function layerUpHandler(e) {
+	var x = (is.ns)? e.layerX:event.offsetX
+	var y = (is.ns)? e.layerY:event.offsetY
+	document.myform.upx.value = x
+	document.myform.upy.value = y
+	return false
+}
+
+</script>
+<style text="text/css">
+<!--
+#mylayerDiv {position:absolute; left:150; top:80; width:130; height:130; clip:rect(0,130,130,0); background-color:#C0C0C0; layer-background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff">
+
+<b>Layer-based mouse events</b>
+
+<form name="myform">
+
+down X: <input type="text" name="downx" size=3>
+<br>down Y: <input type="text" name="downy" size=3>
+
+<p>move X: <input type="text" name="movex" size=3>
+<br>move Y: <input type="text" name="movey" size=3>
+
+<p>up X: <input type="text" name="upx" size=3>
+<br>up Y: <input type="text" name="upy" size=3>
+
+</form>
+
+<div id="mylayerDiv">
+</div>
+
+</body>
+</html>

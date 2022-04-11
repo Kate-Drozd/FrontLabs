@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>DynAPI Examples - Path Animation Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/path.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+	mylayer.path1 = new Path(mylayer,'path1',
+	// x values
+	new Array(90,92,94,97,100,103,107,111,116,120,125,130,135,140,146,151,156,161,167,172,177,183,189,196,203,210,218,227,235,244,252,260,267,273,279,284,288,291,293,294,295,294,293,291,288,285,282,278,274,270,266,263,260,257,254,252,251,251,251,253,255,257,261,266,271,277,284,292,300,310,320,332,344,357,371,385,398,412,424,435),
+	// y values
+	new Array(73,73,72,72,73,73,74,75,77,79,82,85,89,94,101,108,116,125,136,147,158,169,180,191,200,208,215,221,226,229,231,231,230,228,225,220,215,209,202,194,187,179,171,163,155,147,139,132,126,119,114,109,104,100,96,92,88,84,81,77,74,71,68,66,64,63,63,64,65,68,73,79,86,96,107,119,131,143,155,165))
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:90; top:73; width:30; height:30; clip:rect(0,30,30,0); layer-background-color:#C0C0C0; background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+<p>Path Animation:
+<br><a href="javascript:mylayer.path1.play()">play</a>
+<br><a href="javascript:mylayer.path1.play(true)">play (loop)</a>
+<br><a href="javascript:mylayer.path1.pause()">pause</a>
+<br><a href="javascript:mylayer.path1.stop()">stop</a>
+
+</body>
+</html>

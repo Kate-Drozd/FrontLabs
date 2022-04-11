@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (JavaScript in Content Page)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myscroll.load('text-javascript.html')
+}
+
+myscroll = new Scroll(100,50,350,220)
+myscroll.usebuffer = false
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<a href="javascript:myscroll.back()">back</a>
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

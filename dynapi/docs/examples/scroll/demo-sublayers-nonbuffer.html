@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (External Non-Buffered Sub-Layers)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myscroll.load('text-sublayers-nonbuffer.html')
+}
+
+myscroll = new Scroll(170,50,350,220)
+myscroll.usebuffer = false
+myscroll.build()
+
+function loadSubLayer() {
+	if (is.ns) sublayer = new DynLayer('sublayerDiv',myscroll.contentRef)
+	else if (ie4) sublayer = new ScrollDynLayer('sublayerDiv',null,myscroll.name+'Frame')
+}
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+<!-- styles omitted, must be defined in each content page -->
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+sublayer methods:
+<br><a href="javascript:sublayer.hide()">hide()</a>
+<br><a href="javascript:sublayer.show()">show()</a>
+<br><a href="javascript:sublayer.moveBy(10,0)">moveBy(10,0)</a>
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

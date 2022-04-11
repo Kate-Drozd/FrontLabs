@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>DynAPI Examples - Drag Object Demo 2</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../js/drag.js"></script>
+<script language="JavaScript">
+
+function init() {
+	// initialize DynLayers
+	DynLayerInit()
+	
+	// add the draggable layers to the drag object
+	drag.add(blue,red,green,purple)
+	
+	drag.onDragStart = dragStart
+	drag.onDragMove = dragMove
+	drag.onDragEnd = dragEnd
+		
+	initMouseEvents()
+}
+
+function dragStart(x,y) {
+	document.myform.id.value = drag.obj.id
+	document.myform.state.value = "moving"
+	return false
+}
+function dragMove(x,y) {
+	document.myform.layerx.value = drag.obj.x
+	document.myform.layery.value = drag.obj.y
+	return false
+}
+function dragEnd(x,y) {
+	document.myform.state.value = "static"
+	return false
+}
+
+</script>
+<style type="text/css">
+<!--
+#blueDiv {position:absolute; left:300; top:25; width:50; height:50; clip:rect(0,50,50,0); background-color:blue; layer-background-color:blue;}
+#redDiv {position:absolute; left:325; top:50; width:50; height:50; clip:rect(0,50,50,0); background-color:red; layer-background-color:red;}
+#greenDiv {position:absolute; left:350; top:75; width:50; height:50; clip:rect(0,50,50,0); background-color:green; layer-background-color:green;}
+#purpleDiv {position:absolute; left:375; top:100; width:50; height:50; clip:rect(0,50,50,0); background-color:purple; layer-background-color:purple;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<form name="myform">
+Information about the drag layer:
+<br>ID: <input name="id" type="text" size=10>
+<br>state: <input name="state" type="text" size=10>
+<br>x: <input name="layerx" type="text" size=4>
+<br>y: <input name="layery" type="text" size=4>
+</form>
+
+<div id="blueDiv"></div>
+<div id="redDiv"></div>
+<div id="greenDiv"></div>
+<div id="purpleDiv"></div>
+
+</body>
+</html>

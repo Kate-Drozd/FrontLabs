@@ -1,0 +1,123 @@
+h1{
+    font-family: 'Underdog', cursive;
+    font-size: 54px;
+    text-align: center;
+    margin-top: 1.5%;
+}
+#next_h2{
+    position: absolute;
+    top: 1000px;
+    left: 100px;
+}
+
+h2, #next_h2{
+    font-family: 'Underdog', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+nav{
+    font-family: 'Underdog', cursive;
+    text-align: center;
+}
+
+ul {
+    list-style-type:none;
+}
+
+ul li {
+    display:inline-block;
+    margin-right: 1px;
+}
+
+ul li a {
+    display:block;
+    padding: 0px 10px 0px 10px;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background: #6495ED;
+    text-decoration: none;
+    border-radius: 5% ;
+}
+
+ul li:hover a {
+    background: #409099;
+}
+
+.show-menu {
+    text-decoration: none;
+    color: #fff;
+    background: #6495ED;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+
+input[type=checkbox]{
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+.content{
+    position: relative;
+    top: 25px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.content a{
+    margin: 2%;
+}
+
+
+.content img{
+    width: 400px;
+    height: 550px;
+}
+
+.content a:hover{
+    border: 12px solid yellow;
+}
+
+.map img{
+    position: absolute;
+    top:1200px;
+    left: 250px;
+}
+
+@media screen and (max-width : 760px){
+    body{
+        font-size: 20px;
+    }
+    ul {
+        position: static;
+        display: none;
+    }
+    li {
+        margin-bottom: 1px;
+    }
+    ul li a{
+        font-size: 20px;
+    }
+
+    ul li, li a {
+        width: 100%;
+    }
+    .show-menu {
+        display:block;
+        width: 10%;
+    }
+}

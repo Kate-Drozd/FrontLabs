@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>DynAPI Examples - List Object Demo 1</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript">
+
+function init() {
+	mylist.activate()
+}
+
+mylist = new List(50,50,150)
+mylist.add('zero','item 0')
+mylist.add('one','item 1')
+mylist.add('two','item 2')
+mylist.add('three','item 3')
+mylist.add('four','item 4')
+mylist.build()
+
+writeCSS (
+mylist.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(mylist.div)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>DynAPI Examples - MiniScroll [up,down]</TITLE>
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/dynlayer.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/miniscroll.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function init() {
+	DynLayerInit()
+	myscroll = new MiniScroll(scrollWindow,scrollContent)
+}
+
+//-->
+</SCRIPT>
+<STYLE TYPE="text/css">
+<!--
+#scrollWindowDiv {position:absolute; left:180; top:100; width:200; height:150; clip:rect(0,200,150,0); background-color:#C0C0C0; layer-background-color:#C0C0C0;}
+#scrollContentDiv {position:absolute; left:10; top:0; width:180;}
+-->
+</STYLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" onLoad="init()">
+
+<A HREF="javascript:// Scroll Up" onMouseDown="myscroll.up(); return false;" onMouseUp="myscroll.stop()" onMouseOut="myscroll.stop()">Scroll Up</A>
+<BR><A HREF="javascript:// Scroll Down" onMouseDown="myscroll.down(); return false;" onMouseUp="myscroll.stop()" onMouseOut="myscroll.stop()">Scroll Down</A>
+
+<DIV ID="scrollWindowDiv">
+
+<DIV ID="scrollContentDiv">
+
+<P>Top
+
+<P>Content to scroll. Content to scroll. Content to scroll. Content to scroll. Content to scroll. Content to scroll. 
+<P>Content to scroll. Content to scroll. Content to scroll. Content to scroll. Content to scroll. Content to scroll. 
+<P>Content to scroll. Content to scroll. Content to scroll. Content to scroll. Content to scroll. Content to scroll. 
+
+<P>Bottom
+
+</DIV>
+
+</DIV>
+
+</BODY>
+</HTML>

@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>DynAPI Examples - DynAPI Mouse Events</title>
+<script language="JavaScript" src="../../js/browsercheck.js"></script>
+<!-- no dynlayers in this demo -->
+<script language="JavaScript" src="../../js/mouseevents.js"></script>
+<!-- no drag or scroll in this demo -->
+<script language="JavaScript">
+<!--
+
+function init() {
+	initMouseEvents()
+}
+
+function DynMouseDown(x,y) {
+	document.myform.downx.value = x
+	document.myform.downy.value = y
+	return true
+}
+
+function DynMouseMove(x,y) {
+	document.myform.movex.value = x
+	document.myform.movey.value = y
+	return true
+}
+
+function DynMouseUp(x,y) {
+	document.myform.upx.value = x
+	document.myform.upy.value = y
+	return true
+}
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" onload="init()">
+
+<b>DynAPI mouse events</b>
+
+<form name="myform">
+
+down X: <input type="text" name="downx" size=3>
+<br>down Y: <input type="text" name="downy" size=3>
+
+<p>move X: <input type="text" name="movex" size=3>
+<br>move Y: <input type="text" name="movey" size=3>
+
+<p>up X: <input type="text" name="upx" size=3>
+<br>up Y: <input type="text" name="upy" size=3>
+
+</form>
+
+</body>
+</html>

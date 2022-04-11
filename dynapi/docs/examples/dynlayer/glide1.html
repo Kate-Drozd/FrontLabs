@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Glide Methods Demo]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/dynlayer-glide.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:200; top:150; width:30; height:30; clip:rect(0,30,30,0); background-color:#000000; layer-background-color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+<p>GlideTo():
+<br><a href="javascript:mylayer.glideTo('slow','slow',200,200,10,20)">(200,200) slow,slow</a>
+<br><a href="javascript:mylayer.glideTo('slow','fast',200,0,10,30)">(200,0) slow,fast</a>
+<br><a href="javascript:mylayer.glideTo('fast','slow',300,250,10,20)">(300,250) fast,slow</a>
+<br><a href="javascript:mylayer.glideTo('fast','fast',250,50,10,20)">(250,50) fast,fast</a>
+
+<p>GlideBy():
+<br><a href="javascript:mylayer.glideBy('slow','slow',100,50,10,20)">(100,50) slow,slow</a>
+<br><a href="javascript:mylayer.glideBy('slow','fast',-100,-50,10,20)">(-100,-50) slow,slow</a>
+<br><a href="javascript:mylayer.glideBy('fast','slow',-100,150,10,20)">(-100,150) fast,slow</a>
+<br><a href="javascript:mylayer.glideBy('fast','fast',100,-50,10,20)">(100,-50) fast,fast</a>
+
+</body>
+</html>

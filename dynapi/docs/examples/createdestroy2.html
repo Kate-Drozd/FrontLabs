@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>DynAPI Examples - Dynamically Creating Layers Demo 2</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/drag.js"></script>
+<script language="JavaScript" src="../../js/createdestroy.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	// create the initial smiley faces and the boxes
+	createLayer('smileyGreenBox',null,95,95,55,55,'','green')
+	createLayer('smileyWhiteBox',null,96,96,53,53,'','white')
+	createLayer('smileyDiv',null,100,100,45,45,'<img src="../../images/misc/smile.gif" width=45 height=45>')
+
+	createLayer('frownRedBox',null,295,95,55,55,'','red')
+	createLayer('frownWhiteBox',null,296,96,53,53,'','white')
+	createLayer('frownDiv',null,300,100,45,45,'<img src="../../images/misc/frown.gif" width=45 height=45>')
+
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns4) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+smileycount = 0
+
+function mouseDown(e) {
+	if ((is.ns && e.which!=1) || (is.ie && event.button!=1)) return true
+	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+	if (drag.mouseDown(x,y)) {
+		return false
+	}
+	else if (checkWithin(x,y,100,145,100,145)) {  // if clicked green smiley
+		// increment counter
+		smileycount += 1
+
+		// create new layer
+		createLayer('smiley'+smileycount+'Div',null,100,100,45,45,'<img src="../../images/misc/smile.gif" width=45 height=45>')
+
+		// make DynLayer
+		eval('smiley'+smileycount+' = new DynLayer("smiley'+smileycount+'Div")')
+			
+		// add to drag object
+		drag.add(eval('smiley'+smileycount))
+			
+		// begin dragging the new layer
+		drag.mouseDown(x,y)
+		return false
+	}
+	else return true
+}
+function mouseMove(e) {
+	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+	if (drag.mouseMove(x,y)) {
+		return false
+	}
+	else return true
+}
+function mouseUp(e) {
+	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+	if (drag.mouseUp()) {
+		if (checkWithin(x,y,295,350,95,150)) { // if dropped on red square
+			// remove from drag object
+			drag.remove(drag.obj)
+
+			// destroy layer
+			destroyLayer(drag.obj.id)
+			
+			// delete dynlayer
+			eval('delete '+drag.obj.id.substr(0,drag.obj.id.length-3))
+		}
+		return false
+	}
+	else return true
+}
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+Create more smiley faces by dragging them off the green box.
+<br>Remove them by dragging them onto the red box.
+
+</body>
+</html>

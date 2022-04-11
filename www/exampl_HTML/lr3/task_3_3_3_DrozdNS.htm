@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>3.3.3: вычисление среднемесячного дохода</title>
+    <meta charset="UTF-8">
+    <script language="JavaScript">
+        function income(ob_frm) {
+            var inc_m1 = 1.00 * ob_frm.elements[0].value;
+            var inc_m2 = 1.00 * ob_frm.elements[1].value;
+            var inc_m3 = 1.00 * ob_frm.elements[2].value;
+            var inc_m4 = 1.00 * ob_frm.elements[3].value;
+            var inc_m5 = 1.00 * ob_frm.elements[4].value;
+            var inc_m6 = 1.00 * ob_frm.elements[5].value;
+            var inc_mean = (inc_m1 + inc_m2 + inc_m3 + inc_m4 + inc_m5 + inc_m6) / 6;
+            ob_frm.result.value = inc_mean;
+        }
+    </script>
+</head>
+
+<body bgcolor="#ffe4c4">
+<h2>Вычисление среднемесячного дохода </h2>
+<p>Введите начисленные Вам суммы за месяцы:
+<FORM name="form1">
+    январь: <input type="text" size=8 name="m1">
+    февраль: <input type="text" size=8 name="m2">
+    март: <input type="text" size=8 name="m3">
+    апрель: <input type="text" size=8 name="m3">
+    май: <input type="text" size=8 name="m3">
+    июнь: <input type="text" size=8 name="m3"><br><br>
+    Средняя зарплата за шесть месяцев:
+    <input type="text" size=22 name="result"><br><br>
+    <input type="button" value="Вычислить" onClick="income(form1)">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="reset" value="Обновить">
+</FORM>
+</body>
+
+</html>

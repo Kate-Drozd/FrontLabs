@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>DynAPI Examples - Drag Object Demo 1</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../js/drag.js"></script>
+<script language="JavaScript">
+
+function init() {
+	// initialize DynLayers
+	DynLayerInit()
+		
+	// could have added blue,red,green,purple to the drag to make them all initially draggable
+	//drag.add(blue,red,green,purple)	
+	
+	initMouseEvents()
+}
+
+</script>
+<style type="text/css">
+<!--
+#blueDiv {position:absolute; left:100; top:100; width:50; height:50; clip:rect(0,50,50,0); background-color:blue; layer-background-color:blue;}
+#redDiv {position:absolute; left:200; top:100; width:50; height:50; clip:rect(0,50,50,0); background-color:red; layer-background-color:red;}
+#greenDiv {position:absolute; left:300; top:100; width:50; height:50; clip:rect(0,50,50,0); background-color:green; layer-background-color:green;}
+#purpleDiv {position:absolute; left:400; top:100; width:50; height:50; clip:rect(0,50,50,0); background-color:purple; layer-background-color:purple;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+blue: <a href="javascript:drag.add(blue)">add</a> <a href="javascript:drag.remove(blue)">remove</a>
+<br>red: <a href="javascript:drag.add(red)">add</a> <a href="javascript:drag.remove(red)">remove</a>
+<br>green: <a href="javascript:drag.add(green)">add</a> <a href="javascript:drag.remove(green)">remove</a>
+<br>purple: <a href="javascript:drag.add(purple)">add</a> <a href="javascript:drag.remove(purple)">remove</a>
+
+<div id="blueDiv"></div>
+<div id="redDiv"></div>
+<div id="greenDiv"></div>
+<div id="purpleDiv"></div>
+
+</body>
+</html>

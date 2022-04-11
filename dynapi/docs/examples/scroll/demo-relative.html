@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (Relative)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myscroll.load('text1.html')
+}
+
+myscroll = new Scroll(null,null,350,220)  // send null for x and y
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<p>Notice when relative it will flow with the content:
+<p>
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

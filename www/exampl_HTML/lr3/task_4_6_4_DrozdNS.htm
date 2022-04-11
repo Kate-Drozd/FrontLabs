@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+    <TITLE>Периодически сменяющиеся объявления-изображения</TITLE>
+    <meta charset="UTF-8">
+    <!-- Можно добавлять объявления в этот список.
+         Для этого придуман нераспознаваемы элемент.  -->
+    <ADLIST class='list' src="../../../image1/1.jpg" duration=3000>
+        <ADLIST class='list' src="../../../image1/2.jpg" duration=3000>
+                <ADLIST class='list' src="../../../image1/3.jpg"  duration=3000>
+                        <ADLIST class='list' src="../../../image1/4.jpg" duration=3000>
+                                <SCRIPT class='list' LANGUAGE="JavaScript">
+                                    var adSet = document.querySelectorAll(".list");
+                                    adSet.current = 0;
+                                    var nextImage = document.createElement("IMG");
+                                    ////////////////////////////////////////////////////////////
+                                    function preLoad() {
+                                        console.log("preLoad")
+                                        // Получение следующего изображения.
+                                        // Если ошибка, то переход к следующему изображению
+                                        /* Всегда переустанавливаются обработчики событий    изображений перед назначением атрибута SRC для гарантии невозможности пропуска события*/
+                                        nextImage.onerror = preLoad;
+                                        nextImage.src =
+                                            adSet[adSet.current].getAttribute("src");
+                                        // Атрибут duration определяет длительность
+                                        // показа изображения.
+                                        nextImage.duration =
+                                            adSet[adSet.current].getAttribute("duration");
+                                        if (null == nextImage.duration)  //Если не определено, то
+                                            nextImage.duration = 2000;    // по умолчанию 2 секунды.
+                                        if (++adSet.current == adSet.length)
+                                            adSet.current = 0;            //Стартуем снова.
+                                    }
+                                    ////////////////////////////////////////////////////////////
+                                    function skipImage() {
+                                        // Проверяется, загружено ли следующее изображение.
+                                        if (nextImage.complete) {
+                                            document.all.ad.src = nextImage.src;
+                                            var duration = nextImage.duration;
+                                            preLoad();
+                                            window.tm = setTimeout('skipImage()', duration);
+                                        }
+                                        else //Быстрый повтор, пока следующее изображ. не загружено.
+                                            window.tm = setTimeout('skipImage()', 10);
+                                    }
+                                    preLoad();
+                                </SCRIPT>
+                                </HEAD>
+<BODY ONLOAD="window.tm = setTimeout('skipImage()', 1);"
+      ONUNLOAD="clearTimeout(window.tm);">
+<H2>Периодически сменяющиеся изображения.</H2>
+<IMG ID="ad" SRC="https://www.bsuir.by/m/12_100229_1_90596.jpg">
+</BODY>
+</HTML>

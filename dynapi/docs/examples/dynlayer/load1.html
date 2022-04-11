@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>DynAPI Examples - External Source Files Demo [DynLayer Load Method]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/dynlayer-common.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mylayer = new DynLayer('mylayerDiv')
+	mylayer.load = DynLayerLoad
+}
+
+//-->
+</script>
+<STYLE TEXT="text/css">
+<!--
+#mylayerDiv {position:absolute; left:50; top:100; width:200; height:120; clip:rect(0,200,120,0); background-color:yellow; layer-background-color:yellow;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<a href="javascript:mylayer.load('load1-text.html')">load source</a>
+
+<!-- must have bufferFrame in the body somewhere -->
+<IFRAME STYLE="display:none" name="bufferFrame"></IFRAME>
+
+<div id="mylayerDiv"></div>
+
+</body>
+</html>

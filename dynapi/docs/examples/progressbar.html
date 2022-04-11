@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>DynAPI Examples - Progress Bar</TITLE>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/progressbar.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myProgressBar.activate()
+}
+
+myProgressBar = new ProgressBar(150,100,300,15,'../../images/progressbar.gif')
+myProgressBar.build()
+
+
+writeCSS (
+myProgressBar.css
+)
+
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<h3>Progress Bar</h3>
+
+<a href="javascript:myProgressBar.setPosition(0)">Set to 0</a><br>
+<a href="javascript:myProgressBar.setPosition(10)">Set to 10</a><br>
+<a href="javascript:myProgressBar.setPosition(20)">Set to 20</a><br>
+<a href="javascript:myProgressBar.setPosition(30)">Set to 30</a><br>
+<a href="javascript:myProgressBar.setPosition(40)">Set to 40</a><br>
+<a href="javascript:myProgressBar.setPosition(50)">Set to 50</a><br>
+<a href="javascript:myProgressBar.setPosition(60)">Set to 60</a><br>
+<a href="javascript:myProgressBar.setPosition(70)">Set to 70</a><br>
+<a href="javascript:myProgressBar.setPosition(80)">Set to 80</a><br>
+<a href="javascript:myProgressBar.setPosition(90)">Set to 90</a><br>
+<a href="javascript:myProgressBar.setPosition(100)">Set to 100</a><br>
+
+<script language="JavaScript">
+document.write(myProgressBar.div)
+</script>
+
+</body>
+</html>

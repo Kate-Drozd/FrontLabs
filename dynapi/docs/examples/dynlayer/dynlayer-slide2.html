@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [onSlide() Handler]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	DynLayerInit()
+	mylayer.slideInit()
+
+	// assign the onslide handlers
+	mylayer.onSlide = mylayerSlide
+	mylayer.onSlideEnd = mylayerSlideEnd
+
+	// I initially make it to slide to (250,200) via the slide link
+	// but using the onSlide and onSlideEnd handlers I
+	// stop it in mid-slide, and do something else
+}
+
+function mylayerSlide() {
+	// show location in status bar
+	status = "x: "+Math.floor(this.x)+" y: "+Math.floor(this.y)
+
+	// stop before it reaches its destination
+	if (this.x >= 190) {
+		this.slideActive = false
+	}
+}
+
+function mylayerSlideEnd() {
+	// automatically called when the slide has finished
+	alert('finished at ('+Math.floor(this.x)+','+Math.floor(this.y)+')')
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:70; top:50; width:30; height:30; clip:rect(0,30,30,0); background-color:blue; layer-background-color:blue;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+<a href="javascript:mylayer.slideTo(250,200,10,20)">slide</a>
+<br><a href="javascript:mylayer.moveTo(70,50)">reset</a>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (External, Non-Buffered)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myscroll.load('text1-nonbuffer.html')
+}
+
+myscroll = new Scroll(170,50,350,220)
+myscroll.usebuffer = false
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+<!-- styles omitted, must be defined in each content page -->
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<p><a href="javascript:myscroll.load('text1-nonbuffer.html')">load text1-nonbuffer.html</a>
+<br><a href="javascript:myscroll.load('text2-nonbuffer.html')">load text2-nonbuffer.html</a>
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (Using the old code)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="scroll-old.js"></script>
+<script language="JavaScript">
+<!--
+
+// Initialize Scroll Object
+myscroll = new Scroll('myscroll',40,30,350,220)
+myscroll.build()
+
+function init() {
+	// when using external you must load the external file into the object
+	myscroll.load('text-oldscroll.html')
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+function mouseDown(e) {
+	if ((is.ns && e.which == 1) || ie4) {
+		if (is.ns) {var x=e.pageX; var y=e.pageY}
+		if (ie4) {var x=event.x; var y=event.y+document.body.scrollTop}
+		myscroll.mouseDown(x,y)
+		if (myscroll.active || myscroll.arrow.active) return false
+	}
+}
+function mouseMove(e) {
+	if (is.ns) {var x=e.pageX; var y=e.pageY}
+	if (ie4) {var x=event.x; var y=event.y+document.body.scrollTop}
+	myscroll.mouseMove(x,y)
+	if (myscroll.active || myscroll.arrow.active) return false
+}
+function mouseUp(e) {
+	myscroll.mouseUp()
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(myscroll.div)
+</script>
+
+</body>
+</html>

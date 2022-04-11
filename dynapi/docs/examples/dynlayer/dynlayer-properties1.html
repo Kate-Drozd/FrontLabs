@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Core Properties & Methods Demo]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+imageX = new Image()
+imageX.src = "imageX.gif"
+imageY = new Image()
+imageY.src = "imageY.gif"
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:250; top:50; width:250; height:150; clip:rect(0,250,150,0); layer-background-color:#C0C0C0; background-color:#C0C0C0; visibility:visible;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv">
+Image:
+<br><img name="mylayerImg" src="imageX.gif" width=20 height=20>
+
+<p>Form:
+<FORM name="myform">
+<INPUT name="mytext" TYPE="text" SIZE="20" VALUE="my text">
+</FORM>
+</div>
+
+<p>Check Values:<br>
+<a href="javascript:alert(mylayer.x)">x</a>,
+<a href="javascript:alert(mylayer.y)">y</a>,
+<a href="javascript:alert(mylayer.css)">css</a>,
+<a href="javascript:alert(mylayer.css.visibility)">visibility</a>,
+<a href="javascript:alert(mylayer.css.zIndex)">zIndex</a>
+
+<p>Change Image:
+<br><a href="javascript://code is in onClick, see source" onClick="mylayer.doc.images['mylayerImg'].src=imageX.src">imageX</a>
+<br><a href="javascript://code is in onClick, see source" onClick="mylayer.doc.images['mylayerImg'].src=imageY.src">imageY</a>
+
+<p>Retrive Form Value:
+<br><a href="javascript:alert(mylayer.doc.myform.mytext.value)">text value</a>
+
+<p>Alert .obj (a string that when
+<br>evaluated is equivalent to the object
+<br><a href="javascript:alert(mylayer.obj)">obj properety</a>
+
+</body>
+</html>

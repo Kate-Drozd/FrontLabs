@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>CollapseMenu Object Demo 1</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-glide.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-common.js"></script>
+<script language="JavaScript" src="../../js/collapsemenu.js"></script>
+<script language="JavaScript">
+<!--
+
+onload = init
+function init() {
+	collapse.activate()
+	
+	// set the height of the document based on the height of the menu
+	if (is.ns) document.height = collapse.lyr.y + collapse.h
+}
+
+collapse = new CollapseMenu(50,50,200,3)
+collapse.openStyle = 'glide'
+collapse.build()
+
+writeCSS(
+collapse.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(collapse.divStart)
+</script>
+
+<div id="CollapseMenu0Block0">
+<div id="CollapseMenu0Block0Item"><a href="javascript:collapse.toggle(0)">item 0</a></div>
+<div id="CollapseMenu0Block0Content">
+item 0 content goes here
+<br>item 0 content goes here
+<br>item 0 content goes here
+<br>item 0 content goes here
+<br>item 0 content goes here
+</div>
+
+<div id="CollapseMenu0Block1">
+<div id="CollapseMenu0Block1Item"><a href="javascript:collapse.toggle(1)">item 1</a></div>
+<div id="CollapseMenu0Block1Content">
+item 1 content goes here
+<br>item 1 content goes here
+<br>item 1 content goes here
+<br>item 1 content goes here
+<br>item 1 content goes here
+</div>
+
+<div id="CollapseMenu0Block2">
+<div id="CollapseMenu0Block2Item"><a href="javascript:collapse.toggle(2)">item 2</a></div>
+<div id="CollapseMenu0Block2Content">
+item 2 content goes here
+<br>item 2 content goes here
+<br>item 2 content goes here
+<br>item 2 content goes here
+<br>item 2 content goes here
+</div>
+
+<script language="JavaScript">
+document.write(collapse.divEnd)
+</script>
+
+</body>
+</html>

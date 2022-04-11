@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Clip Methods Demo]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+	
+	// for IE 5.0 must manually set the clip values again
+	if (is.ie5) mylayer.clipInit(0,100,100,0)
+	
+	// for other browsers it's not necessary because the layer in this example
+	// is clipped to defaults so I don't have to pass clip values
+	else mylayer.clipInit()
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:250px; top:50px; width:100px; height:100px; clip:rect(0px 100px 100px 0px); background-color:#C0C0C0; layer-background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv">
+hello how are you hello how are you hello how are you hello how are you 
+hello how are you hello how are you hello how are you hello how are you 
+</div>
+
+<p>clipValues() examples:
+<a href="javascript:alert(mylayer.clipValues('t'))">top</a>,
+<a href="javascript:alert(mylayer.clipValues('r'))">right</a>,
+<a href="javascript:alert(mylayer.clipValues('b'))">bottom</a>,
+<a href="javascript:alert(mylayer.clipValues('l'))">left</a>
+
+<p>clipTo() examples:
+<br><a href="javascript:mylayer.clipTo(null,null,null,20)">clipTo left 20</a>
+<br><a href="javascript:mylayer.clipTo(null,80,null,null)">clipTo right 80</a>
+<br><a href="javascript:mylayer.clipTo(20,null,null,null)">clipTo top 20</a>
+<br><a href="javascript:mylayer.clipTo(null,null,80,null)">clipTo bottom 80</a>
+<br><a href="javascript:mylayer.clipTo(0,100,100,0)">clipTo (0,100,100,0)</a>
+<br><a href="javascript:mylayer.clipTo(25,75,75,25)">clipTo (25,75,75,25)</a>
+
+<p>clipBy() examples:
+<br><a href="javascript:mylayer.clipBy(0,0,0,-10)">clip by (0,0,0,-10)</a> more left
+<br><a href="javascript:mylayer.clipBy(0,0,0,10)">clip by (0,0,0,10)</a> less left
+<br><a href="javascript:mylayer.clipBy(0,10,0,0)">clip by (0,10,0,0)</a> more right
+<br><a href="javascript:mylayer.clipBy(0,-10,0,0)">clip by (0,-10,0,0)</a> less right
+<br><a href="javascript:mylayer.clipBy(-10,0,0,0)">clip by (-10,0,0,0)</a> more top
+<br><a href="javascript:mylayer.clipBy(10,0,0,0)">clip by (10,0,0,0)</a> less top
+<br><a href="javascript:mylayer.clipBy(0,0,10,0)">clip by (0,0,0,-10)</a> more bottom
+<br><a href="javascript:mylayer.clipBy(0,0,-10,0)">clip by (0,0,0,10)</a> less bottom
+
+</body>
+</html>

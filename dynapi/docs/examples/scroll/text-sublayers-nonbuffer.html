@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Sublayers</title>
+<script language="JavaScript">
+<!--
+if (parent.Scroll) parent.myscroll.writeContent(document)
+//-->
+</script>
+<style type="text/css">
+<!--
+#sublayerDiv {position:absolute; left:20; top:20; width:70; height:25; clip:rect(0,70,25,0); background-color:yellow; layer-background-color:yellow;}
+-->
+</style>
+</head>
+
+<body onLoad="if (parent.Scroll) {parent.myscroll.activate(); parent.loadSubLayer();}">
+
+<div id="content">
+
+<div id="sublayerDiv">sublayer</div>
+
+</div>
+
+</body>
+</html>

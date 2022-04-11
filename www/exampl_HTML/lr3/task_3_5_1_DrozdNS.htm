@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+    <TITLE>Solar System</TITLE>
+	<meta charset="UTF-8">
+    <SCRIPT LANGUAGE="JavaScript" SRC="../../../dynapi/js/dynlayer.js"></SCRIPT>
+    <SCRIPT LANGUAGE="JavaScript" SRC="../../../dynapi/js/circle.js"></SCRIPT>
+    <SCRIPT LANGUAGE="JavaScript">
+        <!--
+
+        function init() {
+            earth = new DynLayer("earthDiv")
+            earth.circle = new Circle("earth","circle")
+            moon = new DynLayer("moonDiv")
+            moon.circle = new Circle("moon","circle")
+			play()
+        }
+		
+		function play() {
+			earth.circle.play(125,1.5,0,null,10)
+            moon.circle.play(40,3,0,null,0)
+		}
+		
+		function speedup() {
+		earth.circle.pause()
+		earth.circle.play(125,1.5,0,null,10)
+		}
+		
+		function speedupmoon() {
+		moon.circle.pause()
+		moon.circle.play(125,1.5,0,null,10)
+		}
+		
+		function slowdown() {
+		earth.circle.pause()
+		setTimeout("earth.circle.play(125,1.5,0,null,10)", 100)
+		}
+		
+		function slowdownmoon() {
+		moon.circle.pause()
+		setTimeout("moon.circle.play(125,1.5,0,null,10)", 100)
+		}
+		
+        //-->
+    </SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#000000" BACKGROUND="../../../image1/stars.gif" onLoad="init()">
+
+<center>
+    <h3 style="color: white">Пример использования слоёв: движение изображения с вращающимся спутником</h3>
+    <FORM name="form1">
+        <input type="button" value="Ускорить землю" onClick="speedup()">
+        <input type="button" value="Ускорить спутник" onClick="speedupmoon()">
+        <input type="button" value="Остановка земли" onClick="slowdown()">
+        <input type="button" value="Остановка спутника" onClick="slowdownmoon()">
+    </FORM>
+</center>
+
+<DIV ID="sun" STYLE="position:absolute; left:900; top:360; width:71;">
+    <IMG SRC="../../../image1/sun.gif" WIDTH=71 HEIGHT=71 BORDER=0>
+</DIV>
+
+<DIV ID="earthDiv" STYLE="position:absolute; left:1011; top:346; width:100; height:100;">
+    <DIV ID="earthImg" STYLE="position:absolute; left:34; top:34; width:32; height:32;">
+        <IMG SRC="../../../image1/earth.gif" WIDTH=32 HEIGHT=32 BORDER=0>
+    </DIV>
+    <DIV ID="moonDiv" STYLE="position:absolute; left:80; top:40; width:20; height:20;">
+        <IMG SRC="../../../image1/moon.gif" WIDTH=20 HEIGHT=20 BORDER=0>
+    </DIV>
+</DIV>
+
+</BODY>
+</HTML>

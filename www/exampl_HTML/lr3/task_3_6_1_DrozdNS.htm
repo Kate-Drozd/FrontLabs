@@ -1,0 +1,34 @@
+
+<HTML id="n_1">
+<HEAD  id="n_2">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <TITLE  name="n_3">Простая страница</TITLE></HEAD>
+<BODY id="n_4" bgcolor="F8F8FF">
+<H2 id="n_5">Пример для работы с коллекциями элементов</H2>
+<P id="n_6">Это 6-ой элемент коллекции (порядковый номер - 5)</P>
+<P id="n_7">Это 7-ой элемент коллекции (порядковый номер - 6)</P>
+<SCRIPT id="n_8"  language="JavaScript">
+    for (var i=0;  i<document.all.length; i++)
+    {
+        alert("1-й способ. "+"Тэг с индексом "+i+": "+
+            document.all.item(i).tagName);
+        console.log('all tags P:',document.all.tags("P").length); // поддерживается только в старых версиях браузера интернет ..////////// эксплорер, принимает параментром название и тега и возвращает псевдомассив со всеми таковыми тегами страницы
+    }
+    alert("Встретилось элементов в документе:" +
+        document.all.length); // выдаст 8
+    alert("6-й элемент: " +
+        document.all.item("n_6").tagName);
+    alert("7-й элемент: "+
+        document.all["n_7"].tagName);
+    alert("8-й элемент (последний): " +
+        document.all.n_8.tagName);
+    alert("8-й элемент (первый в коллекции SCRIPTS): " +
+        document.scripts[0].tagName);
+</SCRIPT>
+<SCRIPT id="n_9"  language="JavaScript">
+    alert("9-й элемент (второй в коллекции SCRIPTS): " +
+        document.scripts[1].tagName);
+    alert("Всего элементов в документе: "+document.all.length); // выдаст 9
+</SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>CollapseMenu Object Demo 1</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-glide.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-common.js"></script>
+<script language="JavaScript" src="../../js/collapsemenu.js"></script>
+<script language="JavaScript">
+<!--
+
+onload = init
+function init() {
+	collapse.activate()
+	
+	// set the height of the document based on the height of the menu
+	if (is.ns) document.height = collapse.lyr.y + collapse.h
+}
+
+collapse = new CollapseMenu(50,50,200,5,'collapseMenu')
+collapse.openStyle = 'glide'
+collapse.build()
+
+writeCSS(
+collapse.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(collapse.divStart)
+</script>
+
+<div id="collapseMenuBlock0">
+<div id="collapseMenuBlock0Item"><a href="javascript:collapse.toggle(0)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">The Basics</a></div>
+<div id="collapseMenuBlock0Content">
+<OL>
+<LI><a href="../overview/overview.html">Overview</a>
+<LI><a href="../stylesheets/stylesheets.html">Cascading Style Sheets Positioning</a>
+<LI><a href="../javascript/javascript.html">Cross-Browser JavaScript</a>
+<LI><a href="../showhide/showhide.html">Hiding and Showing</a>
+<LI><a href="../moving/moving.html">Moving</a>
+<LI><a href="../sliding/sliding.html">Sliding</a>
+<LI><a href="../mouseclick/mouseclick.html">Mouse Click Animation</a>
+<LI><a href="../../images/images.html">Changing Images/Rollovers</a>
+<LI><a href="../clipping/clipping.html">Clipping Layers</a>
+<LI><a href="../nesting/nesting.html">Nesting Layers</a>
+</OL>
+</div>
+
+<div id="collapseMenuBlock1">
+<div id="collapseMenuBlock1Item"><a href="javascript:collapse.toggle(1)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Advanced Topics</a></div>
+<div id="collapseMenuBlock1Content">
+<OL>
+<LI><a href="../keystrokes/keystrokes.html">Keystroke Events</a>
+<LI><a href="../audio/audio.html">Audio Controls</a>
+<LI><a href="../writing/writing.html">Layer Writing</a>
+<LI><a href="../changingstyles/changingstyles.html">Changing Styles</a>
+<LI><a href="../source/source.html">External Source Files</a>
+<LI><a href="../forms/forms.html">Working With Forms</a>
+<LI><a href="../generate/generate.html">Generated Layers</a>
+<LI><a href="../widthheight/widthheight.html">Using Browser Width/Height</a>
+<LI><a href="../templates/templates.html">Page Templates</a>
+</OL>
+</div>
+
+<div id="collapseMenuBlock2">
+<div id="collapseMenuBlock2Item"><a href="javascript:collapse.toggle(2)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Object-Oriented DHTML</a></div>
+<div id="collapseMenuBlock2Content">
+<OL>
+<LI><a href="../newobjects/newobjects.html">Creating New Objects</a>
+<LI><a href="../browsercheck/browsercheck.html">BrowserCheck Object</a>
+<LI><a href="../dynlayer/dynlayer.html">The Dynamic Layer Object API</a>
+<LI><a href="../dynlayerext/dynlayerext.html">DynLayer Extensions</a>
+<LI><a href="../geometric/geometric.html">Geometric Animation Objects</a>
+<LI><a href="../gifanim/gifanim.html">Gif Animation</a>
+<LI><a href="../path/path.html">Path Animation</a>
+<LI><a href="../duopath/index.html">Using DuoPath</a>
+<LI><a href="../mouseevents/mouseevents.html">Mouse Events</a>
+<LI><a href="../dragconcepts/dragconcepts.html">Drag and Drop Concepts</a>
+<LI><a href="../drag/drag.html">Drag Object</a>
+<LI><a href="../createdestroy/createdestroy.html">Creating and Destroying Layers</a>
+<LI><a href="../cgicomm/cgicomm.html">CGI Communication</a>
+<LI><a href="../buttons/buttons.html">DHTML Buttons</a>
+<LI><a href="../radio/radio.html">Radio Buttons</a>
+<LI><a href="../checkbox/checkbox.html">CheckBoxes</a>
+<LI><a href="../scrollconcepts/scrollconcepts.html">Scroll Concepts</a>
+</OL>
+</div>
+
+<div id="collapseMenuBlock3">
+<div id="collapseMenuBlock3Item"><a href="javascript:collapse.toggle(3)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Reusable Compenents</a></div>
+<div id="collapseMenuBlock3Content">
+<OL>
+<LI><a href="../widgets/widgets.html">Creating Reusable Widgets</a>
+<LI><a href="../scroll/scroll.html">Scroll</a>
+<LI><a href="../scroll2/scroll2.html">Scroll2</a>
+<LI><a href="../list/list.html">List</a>
+<LI><a href="../selectlist/selectlist.html">SelectList</a>
+<LI><a href="../scrolllist/scrolllist.html">ScrollList</a>
+<LI><a href="../menulist/menulist.html">MenuList</a>
+<LI><a href="../dynwindow/dynwindow.html">DynWindow</a>
+<LI><a href="../clock/clock.html">Clock</a>
+<LI><a href="../calendar/calendar.html">Calendar</a>
+</OL>
+</div>
+
+<div id="collapseMenuBlock4">
+<div id="collapseMenuBlock4Item"><a href="javascript:collapse.toggle(4)"><img src="../../images/folder.gif" width=19 height=16 border=0 align="top">Miscellaneous</a></div>
+<div id="collapseMenuBlock4Content">
+<OL>
+<LI><a href="../index.html">DynAPI</a></td></tr>
+<LI><a href="/cgi-bin/dynduo/downloads.pl')">Downloads</a></td></tr>
+<LI><a href="/cgi-bin/dynduo/forum.pl">DHTML Forum</a></td></tr>
+<LI><a href="../links.html">Links</a></td></tr>
+<LI><a href="mailto:dynduo@dansteinman.com">Email Dan Steinman</a></td></tr>
+</OL>
+</div>
+
+<script language="JavaScript">
+document.write(collapse.divEnd)
+</script>
+
+</body>
+</html>

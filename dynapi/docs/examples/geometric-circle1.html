@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>DynAPI Examples - Circle Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/circle.js"></script>
+<script language="JavaScript">
+<!--
+
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+	mylayer.circle = new Circle("mylayer","circle")
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:300; top:150; width:50; height:50; clip:rect(0,50,50,0); background-color:#C0C0C0; layer-background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+Circle:
+<br><a href="javascript:mylayer.circle.play(100,5,0,null,20)">play (loop)</a>
+<br><a href="javascript:mylayer.circle.pause()">pause</a>
+<br><a href="javascript:mylayer.circle.stop()">stop</a>
+<br><a href="javascript:mylayer.circle.play(100,7,0,90,20)">circle (0 to 90)</a>
+<br><a href="javascript:mylayer.circle.play(100,7,180,360,20,0.5,1)">circle (180 to 360)</a>
+<br><a href="javascript:mylayer.circle.play(100,7,0,-90,20,1,0.5)">circle (0 to -90)</a>
+
+</body>
+</html>

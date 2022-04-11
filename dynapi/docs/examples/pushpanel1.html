@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>DynAPI Examples - PushPanel Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scrollwindow.js"></script>
+<script language="JavaScript" src="../../js/pushpanel.js"></script>
+<script language="Javascript">
+<!--
+
+onload=init
+function init() {
+	ppanel1.activate()
+	ppanel2.activate()
+}
+
+ppanel1 = new PushPanel(50,50,150,150)
+ppanel1.isVertical = true
+ppanel1.setImages(16,'../../images/')
+ppanel1.window.border = 1
+ppanel1.window.setMargins(5,5,5,5)
+ppanel1.build()
+
+ppanel2 = new PushPanel(250,50,150,150)
+ppanel2.isVertical = false
+ppanel2.setImages(16,'../../images/')
+ppanel2.window.border = 1
+ppanel2.window.setMargins(5,5,5,5)
+ppanel2.build()
+
+writeCSS (
+ppanel1.css+
+ppanel2.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(ppanel1.divStart)
+</script>
+
+vertical
+
+<p><a href="javascript:ppanel1.window.load('pushpanel1-text1.html')">load page 1</a>
+
+<script language="JavaScript">
+document.write(ppanel1.divEnd)
+</script>
+
+<script language="JavaScript">
+document.write(ppanel2.divStart)
+</script>
+
+horizontal
+
+<p><a href="javascript:ppanel2.window.load('pushpanel1-text2.html')">load page 2</a>
+
+<script language="JavaScript">
+document.write(ppanel2.divEnd)
+</script>
+
+</body>
+</html>

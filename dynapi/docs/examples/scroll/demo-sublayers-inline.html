@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll Object Demo (Inline Sub-Layers)</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scroll.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	myscroll.activate()
+//	could have manually assigned a DynLayer to sublayerDiv, but
+// this is automatically taken care of by the DynLayer because it has
+// a 'Div' extentions in it's ID
+// sublayer = new DynLayer('sublayerDiv')
+}
+
+myscroll = new Scroll(170,50,350,220)
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+<style type="text/css">
+<!--
+P {font-family:Arial; font-size:9pt;}
+H3 {font-family:Arial; font-size:13pt;}
+#sublayerDiv {position:absolute; left:30; top:30; width:60; height:25; clip:rect(0,60,25,0); background-color:yellow; layer-background-color:yellow;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+sublayer methods:
+<br><a href="javascript:sublayer.hide()">hide()</a>
+<br><a href="javascript:sublayer.show()">show()</a>
+<br><a href="javascript:sublayer.moveBy(10,0)">moveBy(10,0)</a>
+
+<script language="JavaScript">
+document.write(myscroll.divStart)
+</script>
+
+<div id="sublayerDiv">sublayer</div>
+
+<script language="JavaScript">
+document.write(myscroll.divEnd)
+</script>
+
+</body>
+</html>

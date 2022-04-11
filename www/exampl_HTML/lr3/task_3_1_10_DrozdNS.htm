@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>3.1.10: Парольер в тэге HEAD</title>
+    <meta charset="UTF-8">
+    <!-- начало скрипта защиты этой страницы паролем -->
+    <script language="JavaScript">
+        var x = 0
+        while (x < 3) {
+            ++x;
+            pass = prompt('Введите пароль, пожалуйста:');
+            if (pass == 'qwe') { alert('Поздравляю! Вы ввели верный пароль!') } else { alert('Сожалею, но вы ввели   неправильный пароль. Повторите, пожалуйста!'), top.location.href = "pr3510_refuse.htm" }
+        }
+    </script>
+    <!-- окончание скрипта защиты этой страницы паролем -->
+    <!-- далее идет что-то полезное, доступное только лишь при введении пароля -->
+    <script language="JavaScript">
+        var yourchoice;
+        yourchoice = prompt("Загадайте букву a, b, c, d или e. Можно и другие, но ...", "a, b, c, d или e")
+        switch (yourchoice) {
+            case "a":
+                alert("Вы ввели число a");
+                break;
+            case "b":
+                alert("Вы ввели число b");
+                break;
+            case "c":
+                alert("Вы ввели число c");
+                break;
+            case "d":
+                alert("Вы ввели число d");
+                break;
+            case "e":
+                alert("Вы ввели число e");
+                break;
+            default: //эта метка и соответствующие ей операторы предусмотрены для выполнения по умолчанию
+                alert("Вы не ввели букву a, b, c, d или e.");
+                break;
+        }
+    </script>
+</head>
+
+<body>
+<A href="../task_2_4_DrozdNS.htm">назад - на страницу со списком примеров и заданий.</A><BR>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Wipe Methods Demo]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/dynlayer-wipe.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+	mylayer.clipTo(0,100,100,0)  // manually send clip values
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:250; top:50; width:100; height:100; clip:rect(0,100,100,0); layer-background-color:#C0C0C0; background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv">
+hello how are you hello how are you hello how are you hello how are you 
+hello how are you hello how are you hello how are you hello how are you 
+</div>
+
+WipeTo() Examples:
+<br><a href="javascript:mylayer.wipeTo(null,null,null,0,10,30)">wipeTo left 0</a>
+<br><a href="javascript:mylayer.wipeTo(null,100,null,null,10,30)">wipeTo right 100</a>
+<br><a href="javascript:mylayer.wipeTo(0,null,null,null,10,30)">wipeTo top 0</a>
+<br><a href="javascript:mylayer.wipeTo(null,null,100,null,10,30)">wipeTo bottom 100</a>
+<br><a href="javascript:mylayer.wipeTo(0,20,20,0,6,50)">wipeTo (0,20,20,0)</a>
+<br><a href="javascript:mylayer.wipeTo(0,120,120,0,10,20)">wipeTo (0,120,120,0)</a>
+<br><a href="javascript:mylayer.wipeTo(55,65,65,55,10,20)">wipeTo (55,65,65,55)</a>
+
+<p>WipeBy() Examples:
+<br><a href="javascript:mylayer.wipeBy(0,0,0,-50,5,30)">wipeBy more left</a>
+<br><a href="javascript:mylayer.wipeBy(0,0,0,50,5,30)">wipeBy less left</a>
+<br><a href="javascript:mylayer.wipeBy(0,50,0,0,5,30)">wipeBy more right</a>
+<br><a href="javascript:mylayer.wipeBy(0,-50,0,0,5,30)">wipeBy less right</a>
+<br><a href="javascript:mylayer.wipeBy(-50,0,0,0,5,30)">wipeBy more top</a>
+<br><a href="javascript:mylayer.wipeBy(50,0,0,0,5,30)">wipeBy less top</a>
+<br><a href="javascript:mylayer.wipeBy(0,0,50,0,5,30)">wipeBy more bottom</a>
+<br><a href="javascript:mylayer.wipeBy(0,0,-50,0,5,30)">wipeBy less bottom</a>
+<br><a href="javascript:mylayer.wipeBy(-50,50,50,-50,5,30)">wipeBy (-50,50,50,-50)</a>
+<br><a href="javascript:mylayer.wipeBy(20,-20,-20,20,5,30)">wipeBy (20,-20,-20,20)</a>
+
+</body>
+</html>

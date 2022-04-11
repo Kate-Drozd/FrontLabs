@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>DynAPI Examples - Dynamically Creating Layers Demo 1</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/createdestroy.js"></script>
+<script language="JavaScript">
+<!--
+
+function createMyLayer1() {
+	createLayer('mylayer1Div',null,180,60,250,200,'This is mlayer1Div','#C0C0C0')
+	mylayer1 = new DynLayer('mylayer1Div')
+}
+
+function createMyChild1() {
+	createLayer('mychild1Div','mylayer1Div',40,40,150,100,'This is mychild1Div','#808080')
+	mychild1 = new DynLayer('mychild1Div','mylayer1Div')
+}
+
+function destroyMyLayer1() {
+	destroyLayer('mylayer1Div')
+	delete mylayer1
+}
+
+function destroyMyChild1() {
+	destroyLayer('mychild1Div','mylayer1Div')
+	delete mychild1
+}
+
+function checkMyLayer1() {
+	if (ns4) alert(document.layers['mylayer1Div'])
+	else if (ie4) alert(document.all['mylayer1Div'])
+}
+
+function checkMyChild1() {
+	if (ns4) alert(document.layers['mylayer1Div'].document.layers['mychild1Div'])
+	else if (ie4) alert(document.all['mychild1Div'])
+}
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+You must create mylayer1Div before creating mychild1Div
+
+<p><a href="javascript:createMyLayer1()">create mylayer1Div</a>
+<br><a href="javascript:createMyChild1()">create mychild1Div</a>
+
+<p><a href="javascript:destroyMyLayer1()">destroy myLayer1Div</a>
+<br><a href="javascript:destroyMyChild1()">destroy mychild1Div</a>
+
+<p>Check existance:
+<br><a href="javascript:checkMyLayer1()">mylayer1Div</a>
+<br><a href="javascript:alert(mylayer1)">mylayer1</a> (DynLayer)
+<br><a href="javascript:checkMyChild1()">mychild1Div</a>
+<br><a href="javascript:alert(mychild1)">mychild1</a> (DynLayer)
+
+</body>
+</html>

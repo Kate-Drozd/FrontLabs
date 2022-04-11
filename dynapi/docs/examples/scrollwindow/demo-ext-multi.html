@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollWindow Demo [external multiple blocks]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/scrollwindow.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+	// this file contains the multiple blocks
+	mywindow.load('text-ext-multi.html')
+}
+
+mywindow = new ScrollWindow(200,50,250,200,null,'mywin')
+mywindow.inlineBlocks = 4
+mywindow.build()
+
+writeCSS(
+mywindow.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript://" onMouseDown="mywindow.up(); return false" onMouseUp="mywindow.stop()" onMouseOut="mywindow.stop()">up</a>
+<br><a href="javascript://" onMouseDown="mywindow.down(); return false" onMouseUp="mywindow.stop()" onMouseOut="mywindow.stop()">down</a>
+
+<p><a href="javascript:mywindow.showBlock(0)">show block 0</a>
+<br><a href="javascript:mywindow.showBlock(1)">show block 1</a>
+<br><a href="javascript:mywindow.showBlock(2)">show block 2</a>
+<br><a href="javascript:mywindow.showBlock(3)">show block 3</a>
+
+<script language="JavaScript">
+document.write(mywindow.div)
+</script>
+
+</body>
+</html>

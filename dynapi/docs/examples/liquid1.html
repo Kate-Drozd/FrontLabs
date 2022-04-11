@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>DynAPI Examples - Using Browser Width/Height [Liquid Effect]</title>
+<script language="JavaScript" src="../../js/browsercheck.js"></script>
+<script language="JavaScript" src="../../js/css.js"></script>
+<script language="JavaScript" src="../../js/liquid.js"></script>
+</head>
+
+<body bgcolor="#ffffff" onResize="makeLiquid()">
+
+<script language="JavaScript">
+<!--
+
+findWH()
+
+writeCSS (
+css('topLeft',0,0,100,20,'yellow')+
+css('topCenter',(winW-100)/2,0,100,20,'yellow')+
+css('topRight',winW-100,0,100,20,'yellow')+
+
+css('middleLeft',0,(winH-20)/2,100,20,'yellow')+
+css('middleCenter',(winW-100)/2,(winH-20)/2,100,20,'yellow')+
+css('middleRight',winW-100,(winH-20)/2,100,20,'yellow')+
+
+css('bottomLeft',0,winH-20,100,20,'yellow')+
+css('bottomCenter',(winW-100)/2,winH-20,100,20,'yellow')+
+css('bottomRight',winW-100,winH-20,100,20,'yellow')
+)
+
+//-->
+</script>
+
+<div id="topLeft">top left</div>
+<div id="topCenter">top center</div>
+<div id="topRight">top right</div>
+
+<div id="middleLeft">middle left</div>
+<div id="middleCenter">middle center</div>
+<div id="middleRight">middle right</div>
+
+<div id="bottomLeft">bottom left</div>
+<div id="bottomCenter">bottom center</div>
+<div id="bottomRight">bottom right</div>
+
+</body>
+</html>

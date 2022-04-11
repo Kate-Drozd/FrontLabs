@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Тестирование</title>
+        <link rel="stylesheet" href="../../styles/style_task5.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Underdog&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Тестирование</h1>
+        <nav>
+            <ul id="menu">
+                <li><a href="./task_2_1_DrozdNS.htm">О себе</a></li>
+                <li><a href="./task_2_2_DrozdNS.htm">План обучения программированию</a></li>
+                <li><a href="./task_2_3_DrozdNS.htm">Интересы</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div id="results"></div>
+            <form name="quizForm" onsubmit="return submitAnswers()">
+                <h3>1. Чем занимается большинство детей во время летних каникул?</h3>
+                <input type="radio" name="q1" value="a" id="q1a">a. Отдыхают, гуляют, играют<br>
+                <input type="radio" name="q1" value="b" id="q1b">b. Учат уроки<br>
+                <input type="radio" name="q1" value="c" id="q1c">c. Сажают картошку, капусту и другие овощи<br>
+
+                <h3>2. Правда ли что "от сессии до сессии студент живёт весело"?</h3>
+                <input type="checkbox" name="q2" value="a" id="q2a">a. Да!<br>
+                <input type="checkbox" name="q2" value="b" id="q2b">b. Ну конечно да!<br>
+
+                <h3>3. В каком мультфильме Дед Мороз пришел в гости к детям на летних каникулах?</h3>
+                <input type="radio" name="q3" value="a" id="q3a">a. «12 месяцев»;<br>
+                <input type="radio" name="q3" value="b" id="q3b">b. «Дед Мороз и лето»;<br>
+                <input type="radio" name="q3" value="c" id="q3c">c. «Ну погоди»;<br>
+
+                <h3>4. Сколько длятся летние каникулы у студента?</h3>
+                <textarea>
+                  Нет, не 3 месяца.
+                </textarea>
+                <br><br>
+                <input type="submit" value="Submit Answers">
+            </form>
+        </section>
+    </body>
+</HTML>

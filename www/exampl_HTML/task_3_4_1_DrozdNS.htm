@@ -1,0 +1,64 @@
+<html lang="en">
+<head><title>Простейший калькулятор</title>
+    <meta charset="UTF-8">
+    <script language="javascript">
+        //присваивается переменнной option значение
+        var option = prompt("1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление, 5 возведение в степень, 6 - префиксная операция увеличения числа, 7 - постфиксная операция увеличения числа",
+            "Введите номер операции, которую хотите произвести");
+        // исходя из введенной в переменную option значения функции prompt, обрабатывается один из нижеперечисленных вариантов
+        switch (parseInt(option)) {
+            //сложение
+            case 1:
+                //здесь инициализируется впервые две переменные, далее по коду присваевается уже определлённым переменным новые значения
+                var param1 = prompt("Введите первое слогаемое", "1");
+                var param2 = prompt("Введите второе слогаемое", "1");
+                param1 = parseInt(param1) + parseInt(param2);
+                alert( 'ответ: '+ param1 );
+                break;
+            case 2:
+                //вычитание
+                param1 = prompt("Введите уменьшаемое", 1);
+                param2 = prompt("Введите вычитаемое", 1);
+                param1 = parseInt(param1) - parseInt(param2);
+                alert( 'ответ: '+ param1 );
+                break;
+            case 3:
+                //умножение
+                param1 = prompt("Введите первый множитель", 1);
+                param2 = prompt("Введите второй множитель", 1);
+                param1 = parseInt(param1) * parseInt(param2);
+                alert( 'ответ: '+ param1 );
+                break;
+            case 4:
+                //деление
+                param1 = prompt("Введите делимое", 1);
+                param2 = prompt("Введите делитель", 1);
+                param1 = parseInt(param1) / parseInt(param2);
+                alert( 'ответ: '+ param1 );
+                break;
+            case 5:
+                //возведение в степень
+                param1 = prompt("Введите число", 1);
+                param2 = prompt("Введите степень", 1);
+                param1 = parseInt(param1) ** parseInt(param2);
+                alert( 'ответ: '+ param1 );
+                break;
+            case 6:
+                //префиксная операция увеличения числа
+                param1 = prompt("Введите число", 1);
+                alert( 'ответ: '+ ++param1 );
+                break;
+            case 7:
+                //постфиксная операция увеличения числа
+                param1 = prompt("Введите число", 1);
+                alert( 'ответ: '+ param1++ );
+                break;
+            default:
+                //вариант по умолчанию, если данные не были введены, или были введены некорректно
+                alert( "значения не были введены, либо тип введённых данных не соответсвует типу integer" );
+        }
+
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>DynAPI Examples - MenuList Object 1</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript" src="../../js/menulist.js"></script>
+<script language="JavaScript">
+
+function init() {
+	numbers.activate()
+}
+
+function menuListHandler() {
+	alert('value = '+this.list.value)
+}
+
+numbers = new MenuList(10,10,100,18)
+numbers.overOpen = true  // mouse over opens the next menulist
+
+numbers.list.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+numbers.onSelect = menuListHandler  // set a handler to show the value
+
+numbers.list.add(0,'&nbsp;item 0')
+numbers.list.add(1,'&nbsp;item 1')
+numbers.list.add(2,'&nbsp;item 2')
+numbers.list.add(0,'&nbsp;item 3')
+numbers.list.add(1,'&nbsp;item 4')
+numbers.list.add(2,'&nbsp;item 5')
+
+numbers0 = new MenuList(numbers,0)
+numbers0.list.add(0,'&nbsp;item 0')
+
+  numbers0_0 = new MenuList(numbers0,0)
+  numbers0_0.list.add(0,'&nbsp;item 0')
+  numbers0_0.list.add(1,'&nbsp;item 1')
+  numbers0_0.list.add(2,'&nbsp;item 2')
+
+    numbers0_0_0 = new MenuList(numbers0_0,0)
+    numbers0_0_0.list.add(0,'&nbsp;item 0')
+    numbers0_0_0.list.add(1,'&nbsp;item 1')
+    numbers0_0_0.list.add(2,'&nbsp;item 2')
+    numbers0_0_0.list.add(0,'&nbsp;item 3')
+    numbers0_0_0.list.add(1,'&nbsp;item 4')
+	 
+numbers1 = new MenuList(numbers,1)
+numbers1.list.add(0,'&nbsp;item 0')
+numbers1.list.add(1,'&nbsp;item 1')
+numbers1.list.add(2,'&nbsp;item 2')
+numbers1.list.add(2,'&nbsp;item 3')
+
+  numbers1_2 = new MenuList(numbers1,2)
+  numbers1_2.list.add(0,'&nbsp;item 0')
+  numbers1_2.list.add(1,'&nbsp;item 1')
+  numbers1_2.list.add(2,'&nbsp;item 2')
+
+numbers5 = new MenuList(numbers,5)
+numbers5.list.add(0,'&nbsp;item 0')
+numbers5.list.add(1,'&nbsp;item 1')
+numbers5.list.add(2,'&nbsp;item 2')
+numbers5.list.add(3,'&nbsp;item 3')
+numbers5.list.add(4,'&nbsp;item 4')
+numbers5.list.add(5,'&nbsp;item 5')
+numbers5.list.add(6,'&nbsp;item 6')
+numbers5.list.add(7,'&nbsp;item 7')
+numbers5.list.add(8,'&nbsp;item 8')
+numbers5.list.add(9,'&nbsp;item 9')
+numbers5.list.add(10,'&nbsp;item 10')
+numbers5.list.add(11,'&nbsp;item 11')
+numbers5.list.add(12,'&nbsp;item 12')
+numbers5.list.add(13,'&nbsp;item 13')
+numbers5.list.add(14,'&nbsp;item 14')
+
+numbers.build()
+
+writeCSS(
+numbers.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(numbers.div)
+</script>
+
+</body>
+</html>

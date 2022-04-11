@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>DynAPI Examples - Changing Images Demo 3</title>
+<script language="JavaScript" src="../../js/images.js"></script>
+<script language="JavaScript">
+<!--
+
+preload('imageA','../../images/misc/imageA.gif')
+preload('imageB','../../images/misc/imageB.gif')
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#imgDiv {position:absolute; left:50; top:100; width:75;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="imgDiv">
+<a href="javascript:void(null)"
+onMouseOver="changeImage('imgDiv','myImg','imageB')"
+onMouseOut="changeImage('imgDiv','myImg','imageA')">
+<img name="myImg" src="../../images/misc/imageA.gif" width=75 height=75 border=0></a>
+</div>
+
+</body>
+</html>

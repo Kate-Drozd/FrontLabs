@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Вычисление среднемесячного дохода</title>
+    <meta charset="UTF-8">
+    <script language="JavaScript1.2" src="stat_pvn.js"></script>
+    <script language="JavaScript1.2">
+        function income(ob_frm) {
+            var x1 = new Array();
+            for (var i=0; i<ob_frm.elements.length-7; i++) {x1[i] = 1.0*ob_frm.elements[i].value}
+            inc_mean = Math.round(mean(x1)*1000)/1000;
+            ob_frm.result.value = inc_mean;
+            var max_v = max_arr(x1);
+            document.querySelectorAll("input").forEach(input => {
+                if(+input.value === max_v) {
+					max_v = input.value;
+                    ob_frm.max_month.value = input.getAttribute("data-month");
+                }
+            });
+			console.log(ob_frm.elements.length-7);
+            ob_frm.max_income.value = max_v;
+            var min_v = min_arr(x1);
+            document.querySelectorAll("input").forEach(input => {
+                if(+input.value === min_v) {
+					min_v = input.value
+                    ob_frm.min_month.value = input.getAttribute("data-month");
+                }
+            });
+			console.log(min_arr);
+            ob_frm.min_income.value = min_v;
+			
+        }
+    </script>
+</head>
+<body background-color=f8f8ff>
+<h2>Вычисление среднемесячного дохода.</h2>
+<p>Введите полученные Вами суммы (вместо сумм по умолчанию)за месяцы:
+<FORM name="form1">
+    январь: <input id="m1" type="text" size=8 value="125.55" data-month="январь">
+    февраль: <input id="m2" type="text" size=8 value="135.55" data-month="февраль">
+    март: <input id="m3" type="text" size=8 value="145.55" data-month="март"><br>
+    апрель: <input id="m4" type="text" size=8 value="155.55" data-month="апрель">
+    май: <input id="m5" type="text" size=8 value="165.55" data-month="май">
+    июнь: <input id="m6" type="text" size=8 value="175.55" data-month="июнь"><br>
+    июль: <input id="m7" type="text" size=8 value="185.55" data-month="июль">
+    август: <input id="m8" type="text" size=8 value="115.55" data-month="август">
+    сентябрь: <input id="m9" type="text" size=8 value="155.55" data-month="сентябрь"><br>
+    октябрь: <input id="m10" type="text" size=8 value="165.55" data-month="октябрь">
+    ноябрь: <input id="m11" type="text" size=8 value="115.55" data-month="ноябрь">
+    декабрь: <input id="m12" type="text" size=8 value="145.55" data-month="декабрь"><br><br>
+    Средний доход за
+    <script>document.write(form1.elements.length)</script> месяцев:
+    <input type="text" size=8 name="result"><br><br>
+    Максимальный доход составляет
+    <input type="text" size=8 name="max_income">
+    за месяц
+    <input type="text" size=8 name="max_month"> <br>
+    Минимальный доход составляет
+    <input type="text" size=8 name="min_income">
+    за месяц
+    <input type="text" size=8 name="min_month"> <br>
+    <input type="button" value="Вычислить"
+           onClick="income(form1)">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="reset" value="Обновить">
+</FORM>
+</body>
+
+</html>

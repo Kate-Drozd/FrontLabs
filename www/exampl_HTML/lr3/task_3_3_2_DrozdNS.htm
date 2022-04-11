@@ -1,0 +1,19 @@
+
+<html>
+
+<head>
+    <title>3.3.2</title>
+    <meta charset="UTF-8">
+    <script language="JavaScript">
+        dateVar = new Date();
+        dCount = 7;
+        dateVar.setDate(dateVar.getDate() + dCount);
+        ten_day = dateVar.toLocaleString();
+        alert("Дата через " + dCount +
+            " дней от текущей даты : " + dateVar.toLocaleString().substr(0, 10));
+    </script>
+</head>
+
+<body></body>
+
+</html>

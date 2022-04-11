@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>DynAPI Examples - Calendar Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/calendar.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mycalendar.activate()
+}
+
+mycalendar = new Calendar(150,30,27,18)
+mycalendar.build()
+
+writeCSS (
+mycalendar.css
+)
+
+// specific functions for mycalendar
+
+currentdate = new Date()
+
+function setmycalendar() {
+	var month = document.calform.month.selectedIndex
+	var day = document.calform.day.selectedIndex+1
+	var year = document.calform.year.options[document.calform.year.selectedIndex].value
+	mycalendar.setDate(month,day,year)
+}
+function resetmycalendar() {
+	document.calform.month.options[0].selected = true
+	document.calform.day.options[0].selected = true
+	document.calform.year.options[0].selected = true
+	mycalendar.setDate()
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+.calDay {font-family:Helvetica; font-size:12pt; color:#000000;}
+.calNormal {font-family:Helvetica; font-size:12pt; color:#000000;}
+.calShaded {font-family:Helvetica; font-size:12pt; color:#B0B0B0;}
+.calHighlighted {font-family:Helvetica; font-size:12pt; color:#FF0000;}
+-->
+</style>
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(mycalendar.div)
+</script>
+
+<!-- specific elements for mycalendar -->
+
+<a href="javascript:mycalendar.lyr.hide()">hide</a>
+<br><a href="javascript:mycalendar.lyr.show()">show</a>
+<br><a href="javascript:resetmycalendar()">reset to today</a>
+
+<form name="calform">
+
+<select name="month" onChange="setmycalendar()">
+<script language="JavaScript">
+var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December')
+var str=''
+for (var i=0;i<months.length;i++) {
+	str += '<option'
+	if (i==currentdate.getMonth()) str+=' selected'
+	str += '>'+months[i]
+}
+document.write(str)
+</script>
+</select>
+
+<br>
+
+<select name="day" onChange="setmycalendar()">
+<script language="JavaScript">
+var str=''
+for (var i=1;i<=31;i++) {
+	str += '<option'
+	if (i==currentdate.getDate()) str+=' selected'
+	str += '>'+i
+}
+document.writeln(str)
+</script>
+</select>
+
+<br>
+
+<select name="year" onChange="setmycalendar()">
+<option value="1997">1997
+<option value="1998">1998
+<option value="1999" selected>1999
+<option value="2000">2000
+<option value="2001">2001
+<option value="2002">2002
+<option value="2003">2003
+<option value="2004">2004
+</select>
+</form>
+
+</body>
+</html>

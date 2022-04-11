@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>DynAPI Examples - Calendar Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/calendar.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+	mycalendar.activate()
+}
+
+mycalendar = new Calendar(300,30,27,18)
+mycalendar.build()
+mycalendar.onChange = updateDisplay
+
+monthList = Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
+function updateDisplay() {
+	document.calform.year.value = this.year
+	document.calform.month.value = this.month+' ('+monthList[this.month]+')'
+	document.calform.day.value = this.day
+}
+
+writeCSS (
+mycalendar.css
+)
+
+
+//-->
+</script>
+<style type="text/css">
+<!--
+.cal {font-family:Helvetica; font-size:12pt; color:#000000;}
+.calDay {font-family:Helvetica; font-size:12pt; color:#000000; font-weight:bold;}
+.calNormal {font-family:Helvetica; font-size:12pt; color:#000000;}
+.calShaded {font-family:Helvetica; font-size:12pt; color:#B0B0B0;}
+.calHighlighted {font-family:Helvetica; font-size:12pt; color:#ffffff; background-color:#000000; a:#d9d9d9; font-weight:bold}
+-->
+</style>
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(mycalendar.div)
+</script>
+
+<form name="calform">
+
+Year: <input type="text" name="year" size=4> <a href="javascript:mycalendar.changeYear(-1)">&lt;prev</a> <a href="javascript:mycalendar.changeYear(1)">next&gt;</a>
+<br>Month: <input type="text" name="month" size=8> <a href="javascript:mycalendar.changeMonth(-1)">&lt;prev</a> <a href="javascript:mycalendar.changeMonth(1)">next&gt;</a>
+<br>Day: <input type="text" name="day" size=4> <a href="javascript:mycalendar.changeDay(-1)">&lt;prev</a> <a href="javascript:mycalendar.changeDay(1)">next&gt;</a>
+<br>also select day by clicking calendar
+<br><a href="javascript:mycalendar.setDate()">reset to today</a>
+<br><a href="javascript:mycalendar.selectNone()">deselect day</a>
+<br><a href="javascript:mycalendar.lyr.hide()">hide</a>
+<br><a href="javascript:mycalendar.lyr.show()">show</a>
+
+</form>
+
+</body>
+</html>

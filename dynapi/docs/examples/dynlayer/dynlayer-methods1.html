@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Core Methods Demo]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:250; top:50; width:50; height:50; clip:rect(0,50,50,0); layer-background-color:#C0C0C0; background-color:#C0C0C0; visibility:visible;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+<p>Check Values:<br>
+<a href="javascript:alert(mylayer.x)">x</a>,
+<a href="javascript:alert(mylayer.y)">y</a>,
+
+<p><a href="javascript:mylayer.hide()">hide layer</a>
+<br><a href="javascript:mylayer.show()">show layer</a>
+
+<p>MoveTo():
+<br><a href="javascript:mylayer.moveTo(250,50)">(250,50)</a>,
+<a href="javascript:mylayer.moveTo(300,100)">(300,100)</a>
+<br><a href="javascript:mylayer.moveTo(350,null)">(350,null)</a>,
+<a href="javascript:mylayer.moveTo(null,150)">(null,150)</a>
+
+<p>MoveBy():
+<br><a href="javascript:mylayer.moveBy(-25,0)">left (-25,0)</a>
+<br><a href="javascript:mylayer.moveBy(25,0)">right (25,0)</a>
+<br><a href="javascript:mylayer.moveBy(0,-25)">up (0,-25)</a>
+<br><a href="javascript:mylayer.moveBy(0,25)">down (0,25)</a>
+<br><a href="javascript:mylayer.moveBy(25,25)">diagonal (25,25)</a>
+
+</body>
+</html>

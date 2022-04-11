@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>DynAPI Examples - The Dynamic Layer Object API [Initialization Demo]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+/*	mylayer = new DynLayer("mylayerDiv")
+	mynest1 = new DynLayer("mynest1Div")
+	mynest2 = new DynLayer("mynest2Div","mynest1Div")
+	mynest3 = new DynLayer("mynest3Div","mynest1Div.document.mynest2Div")*/
+
+	mynest3 = document.getElementById("mynest3Div")
+	var s = mynest3.style.left
+	s = s.substring(0,3)
+	alert("s="+s)
+	mynest3.style.left = (parseInt(mynest3.style.left)+20)+"px"
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+
+#mylayerDiv {position:absolute; left:250; top:50; width:80; height:80; clip:rect(0,80,80,0); layer-background-color:#C0C0C0; background-color:#C0C0C0;}
+#mynest1Div {position:absolute; left:370; top:50; width:200; height:200; clip:rect(0,200,200,0); layer-background-color:#E1E1E1; background-color:#E1E1E1;}
+#mynest2Div {position:absolute; left:30; top:30; width:160; height:160; clip:rect(0,160,160,0); layer-background-color:#C5C5C5; background-color:#C5C5C5;}
+#mynest3Div {position:absolute; left:30; top:30; width:120; height:120; clip:rect(0,120,120,0); layer-background-color:#ACACAC; background-color:#ACACAC;}
+
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv">mylayerDiv</div>
+
+<div id="mynest1Div">
+	mynest1Div
+	
+	<div id="mynest2Div">
+		mynest2Div
+		
+		<div id="mynest3Div">
+			mynest3Div
+		</div>
+		
+	</div>
+	
+</div>
+
+Check for existance of DynLayers
+<br>(will alert [object Object]
+<br>if the object exists):
+
+<p><a href="javascript:alert(mylayer)">mylayer</a>
+<br><a href="javascript:alert(mynest1)">mynest1</a>
+<br><a href="javascript:alert(mynest2)">mynest2</a>
+<br><a href="javascript:alert(mynest3)">mynest3</a>
+
+</body>
+</html>

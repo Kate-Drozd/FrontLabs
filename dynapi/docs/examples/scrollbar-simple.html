@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollBar Demo [simple]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/scrollbar.js"></script>
+<script language="JavaScript">
+<!--
+
+onload=init
+function init() {
+	mybar.activate()
+	
+	// initialize mouse events
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+
+function mouseDown(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+	
+	// other mouseDown code
+	return true
+}
+function mouseMove(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseMove code
+	return true
+}
+function mouseUp(e) {
+	if (is.ns && e.target!=document) routeEvent(e)
+
+	// other mouseUp code
+	return true
+}
+
+mybar = new ScrollBar(100,60,180,180,30,30)
+mybar.bgColor = "#c0c0c0"
+mybar.boxColor = "#808080"
+mybar.build()
+
+writeCSS(
+mybar.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<script language="JavaScript">
+document.write(mybar.div)
+</script>
+
+</body>
+</html>

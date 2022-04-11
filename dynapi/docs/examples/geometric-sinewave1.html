@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>DynAPI Examples - SineWave Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/sinewave.js"></script>
+<script language="JavaScript">
+<!--
+
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+
+function init() {
+	mylayer = new DynLayer("mylayerDiv")
+	mylayer.sinewave = new SineWave("mylayer","sinewave")
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#mylayerDiv {position:absolute; left:100; top:200; width:50; height:50; clip:rect(0,50,50,0); background-color:#C0C0C0; layer-background-color:#C0C0C0;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="mylayerDiv"></div>
+
+Sine Wave:
+<br><a href="javascript:mylayer.sinewave.play(60,200,15,0,2,1,20)">play</a>
+<br><a href="javascript:mylayer.sinewave.pause()">pause</a>
+<br><a href="javascript:mylayer.sinewave.stop()">stop</a>
+<br><a href="" onClick="mylayer.sinewave.stop(); mylayer.moveTo(100,200); return false;">Move To Start</a>
+
+</body>
+</html>

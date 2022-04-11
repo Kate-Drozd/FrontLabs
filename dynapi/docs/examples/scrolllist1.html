@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>DynAPI Examples - ScrollList Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript" src="../../js/scroll2.js"></script>
+<script language="JavaScript" src="../../js/scrolllist.js"></script>
+<script language="JavaScript">
+
+function init() {
+	myscrlist.activate()
+	
+}
+
+myscrlist = new ScrollList(50,50,200,120)
+myscrlist.scroll.imgSet('../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+
+myscrlist.list.add(0,'&nbsp;item 0')
+myscrlist.list.add(1,'&nbsp;item 1')
+myscrlist.list.add(2,'&nbsp;item 2')
+myscrlist.list.add(3,'&nbsp;item 3')
+myscrlist.list.add(4,'&nbsp;item 4')
+myscrlist.list.add(5,'&nbsp;item 5')
+myscrlist.list.add(6,'&nbsp;item 6')
+myscrlist.list.add(7,'&nbsp;item 7')
+myscrlist.list.add(8,'&nbsp;item 8')
+myscrlist.list.add(9,'&nbsp;item 9')
+myscrlist.list.add(10,'&nbsp;item 10')
+myscrlist.list.add(11,'&nbsp;item 11')
+myscrlist.list.add(12,'&nbsp;item 12')
+myscrlist.list.add(13,'&nbsp;item 13')
+myscrlist.list.add(14,'&nbsp;item 14')
+
+// myscrlist.list.onSelect = ListRedirect // do this to auto-redirect based on list.value
+myscrlist.build()
+
+writeCSS(
+myscrlist.css
+)
+
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(myscrlist.div)
+</script>
+
+</body>
+</html>

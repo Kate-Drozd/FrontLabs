@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>DynAPI Examples - Using Browser Width/Height [Liquid Checker Board]</title>
+<script language="JavaScript" src="../../js/browsercheck.js"></script>
+<script language="JavaScript" src="../../js/css.js"></script>
+<script language="JavaScript" src="../../js/liquid.js"></script>
+</head>
+
+<body bgcolor="#ffffff" onResize="makeLiquid()">
+
+<script language="JavaScript">
+<!--
+
+findWH()
+
+var cssstr = ''
+var divstr = ''
+
+numSquares = 10
+squareW = winW/numSquares
+squareH = winH/numSquares
+
+// grey boxes
+a = 1
+for (var i=0; i<numSquares/2; i+=1) {
+	for (var j=0; j<numSquares; j+=1) {
+		a = (a)? 0:1
+		cssstr += css('b'+i+j,a*squareW+i*2*squareW,j*squareH,squareW+1,squareH+1,'#ADADAD')
+		divstr += '<div id="b'+i+j+'"></div>'
+	}
+}
+
+for (var i=0; i<numSquares; i++) {
+	// horizontal lines
+	cssstr += css('h'+i,0,i*squareH,winW,1,'black')
+	divstr += '<div id="h'+i+'"></div>'
+	
+	// vertical lines
+	cssstr += css('v'+i,i*squareW,0,1,winH,'black')
+	divstr += '<div id="v'+i+'"></div>'
+}
+
+writeCSS (
+cssstr
+)
+
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+document.write(divstr)
+//-->
+</script>
+
+</body>
+</html>

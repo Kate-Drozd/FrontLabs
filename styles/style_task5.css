@@ -1,0 +1,58 @@
+h1{
+    font-family: 'Underdog', cursive;
+    font-size: 54px;
+    text-align: center;
+    margin-top: 1.5%;
+}
+
+nav{
+    font-family: 'Underdog', cursive;
+    text-align: center;
+}
+
+ul {
+    list-style-type:none;
+}
+
+ul li {
+    display:inline-block;
+    margin-right: 1px;
+}
+
+ul li a {
+    display:block;
+    padding: 0px 10px 0px 10px;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background: #6495ED;
+    text-decoration: none;
+    border-radius: 5% ;
+}
+
+ul li:hover a {
+    background: #409099;
+}
+
+@media screen and (max-width : 760px){
+    body{
+        font-size: 20px;
+    }
+    ul {
+        position: static;
+        display: none;
+    }
+    li {
+        margin-bottom: 1px;
+    }
+    ul li a{
+        font-size: 20px;
+    }
+
+    ul li, li a {
+        width: 100%;
+    }
+
+}

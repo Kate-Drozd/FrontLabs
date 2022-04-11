@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>DynAPI Examples - Gif Animation Demo 1</title>
+<script language="JavaScript" src="../../js/images.js"></script>
+<script language="JavaScript" src="../../js/gifanim.js"></script>
+<script language="JavaScript">
+<!--
+
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+
+function init() {
+	numImgAnim = new GifAnim('numDiv','numImg','num',5,200)
+}
+
+for (var i=0;i<=5;i++) {
+	preload('num'+i,'../../images/misc/gifanim-num'+i+'.gif')
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#numDiv {position:absolute; left:250; top:75; width:50;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<a href="javascript:numImgAnim.play()">Play (no loop)</a>
+<br><a href="javascript:numImgAnim.play(false,true)">Play (no loop, reset)</a>
+<br><a href="javascript:numImgAnim.play(false,true,'alert(\'done\')')">Play (no loop, reset, alert('done'))</a>
+<br><a href="javascript:numImgAnim.play(true)">Play (loop)</a>
+<br><a href="javascript:numImgAnim.play(true,true)">Play (loop, reset)</a>
+<br><a href="javascript:numImgAnim.play(true,true,'alert(\'done\')')">Play (loop, reset, alert('done'))</a> 
+<br><a href="javascript:numImgAnim.stop()">Stop/Pause</a>
+<br>Goto Frame:
+<a href="javascript:numImgAnim.goToFrame(0)">0</a>&nbsp;
+<a href="javascript:numImgAnim.goToFrame(1)">1</a>&nbsp;
+<a href="javascript:numImgAnim.goToFrame(2)">2</a>&nbsp;
+<a href="javascript:numImgAnim.goToFrame(3)">3</a>&nbsp;
+<a href="javascript:numImgAnim.goToFrame(4)">4</a>&nbsp;
+<a href="javascript:numImgAnim.goToFrame(5)">5</a>&nbsp;
+
+<div id="numDiv">
+<img name="numImg" src="../../images/misc/gifanim-num0.gif" width=50 height=50 border=0>
+</div>
+
+</body>
+</html>

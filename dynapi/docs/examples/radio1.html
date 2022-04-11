@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>DynAPI Examples - Custom Forms [Radio Buttons] Demo 1</title>
+<script language="JavaScript" src="../../js/images.js"></script>
+<script language="JavaScript" src="../../js/radio.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	computers = new Radio('surveyDiv','computersImg',4,'two')
+}
+
+preload('button0','../../images/button-submit0.gif')
+preload('button1','../../images/button-submit1.gif')
+preload('radio0','../../images/radio0.gif')
+preload('radio1','../../images/radio1.gif')
+
+function submitForm() {
+	str = "You have " + computers.value + " computers in your household"
+	alert(str)
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+#surveyDiv {position:absolute; left:50; top:50; width:400;}
+BODY {font-family:"Arial"; font-size:9pt;}
+A {color:black; text-decoration:none;}
+-->
+</style>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<div id="surveyDiv">
+<p>Number of computers in your household:
+<br><a href="javascript:computers.change(0,'one')"><img name="computersImg0" src="../../images/radio0.gif" width=10 height=10 border="0"> one
+<br><a href="javascript:computers.change(1,'two')"><img name="computersImg1" src="../../images/radio1.gif" width=10 height=10 border="0"> two
+<br><a href="javascript:computers.change(2,'three')"><img name="computersImg2" src="../../images/radio0.gif" width=10 height=10 border="0"> three
+<br><a href="javascript:computers.change(3,'four')"><img name="computersImg3" src="../../images/radio0.gif" width=10 height=10 border="0"> four
+
+<p><a href="javascript:submitForm()"
+onMouseDown="changeImage('surveyDiv','submitImg','button1')"
+onMouseUp="changeImage('surveyDiv','submitImg','button0')"
+onMouseOut="changeImage('surveyDiv','submitImg','button0')">
+<img name="submitImg" src="../../images/button-submit0.gif" width=68 height=20 ALT="Submit" border=0></a>
+</div>
+
+</body>
+</html>

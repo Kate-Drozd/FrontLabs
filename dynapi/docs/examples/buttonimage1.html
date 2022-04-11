@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>DynAPI Examples - Button Image Object Demo</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/buttonimage.js"></script>
+<script language="JavaScript">
+<!--
+
+onload = init
+function init() {
+	mybutton1.activate()
+	mybutton2.activate()
+	mybutton3.activate()
+	mybutton4.activate()
+	mybutton5.activate()
+}
+
+mybutton1 = new ButtonImage(50,50,20,20)
+mybutton1.setImages('buttonimage0.gif','buttonimage1.gif',null,'../../images/')
+mybutton1.build()
+
+mybutton2 = new ButtonImage(50,125,20,20)
+mybutton2.setImages('buttonimage0.gif','buttonimage1.gif',null,'../../images/')
+mybutton2.checkbox = true
+mybutton2.build()
+
+mybutton3 = new ButtonImage(50,200,20,20)
+mybutton3.setImages('buttonimage0.gif',null,'buttonimage2.gif','../../images/')
+mybutton3.build()
+
+mybutton4 = new ButtonImage(50,275,20,20)
+mybutton4.setImages('buttonimage0.gif','buttonimage1.gif','buttonimage2.gif','../../images/')
+mybutton4.checkbox = true
+mybutton4.build()
+
+mybutton5 = new ButtonImage(50,350,20,20)
+mybutton5.setImages('buttonimage0.gif','buttonimage1.gif','buttonimage2.gif','../../images/')
+mybutton5.checkbox = true
+mybutton5.build()
+mybutton5.onSelect = new Function("alert('you selected the checkbox')")
+mybutton5.onDeselect = new Function("alert('you deselected the checkbox')")
+
+writeCSS(
+mybutton1.css+
+mybutton2.css+
+mybutton3.css+
+mybutton4.css+
+mybutton5.css+
+css('info1',90,50)+
+css('info2',90,125)+
+css('info3',90,200)+
+css('info4',90,275)+
+css('info5',90,350)
+)
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff">
+
+<div id="info1">with on state only</div>
+<div id="info2">with on state, in checkbox mode</div>
+<div id="info3">with rollover state only</div>
+<div id="info4">with rollover state, in checkbox mode</div>
+<div id="info5">with rollover state, in checkbox mode, and onSelect/onDeselect handlers</div>
+
+<script language="JavaScript">
+document.write(mybutton1.div)
+document.write(mybutton2.div)
+document.write(mybutton3.div)
+document.write(mybutton4.div)
+document.write(mybutton5.div)
+</script>
+
+</body>
+</html>

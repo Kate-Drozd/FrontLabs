@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>DynAPI Examples - Scroll v2 Demo [inline multiple blocks]</title>
+<script language="JavaScript" src="../../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../../js/scroll2.js"></script>
+<script language="Javascript">
+<!--
+
+onload = init
+function init() {
+	myscroll.activate()
+	
+	initMouseEvents()
+}
+
+myscroll = new Scroll(150,50,250,170)
+myscroll.useH = true
+myscroll.imgSet('../../../images/scroll2/metal/',16,16,37,-1,2,-1,2,1,1)
+
+// set the window to display multiple blocks
+myscroll.window.inlineBlocks = 4
+
+myscroll.build()
+
+writeCSS (
+myscroll.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff">
+
+<a href="javascript:myscroll.showBlock(0)">block 0</a>
+<br><a href="javascript:myscroll.showBlock(1)">block 1</a>
+<br><a href="javascript:myscroll.showBlock(2)">block 2</a>
+<br><a href="javascript:myscroll.showBlock(3)">block 3</a>
+
+<script language="JavaScript">
+document.write(myscroll.divStart)
+</script>
+
+<!--
+you must name your div's accordingly
+the first scrollwindow object defined will have div's named 'ScrollWindow0'
+and obviously the index number on the end goes up each time you define a scroll/scrollwindow
+if you're confused read the lesson on the ScrollWindow
+
+Also - do not forget ending </p> tags, if you don't have them they can mess up layout in Netscape 
+-->
+
+<div id="ScrollWindow0Block0">
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. </p>
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. </p>
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. </p>
+<p>This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. This is block 0. </p>
+</div>
+
+<div id="ScrollWindow0Block1">
+<p>This is block 1. This is block 1. This is block 1.</p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1</p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. </p>
+<p>This is block 1. This is block 1. This is block 1.</p>
+<p>This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1. This is block 1</p>
+</div>
+
+<div id="ScrollWindow0Block2">
+<table border=0 width=400><tr><td>
+<p><b>this block is in a table to show horizontal scrolling</b>
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. </p>
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. </p>
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. </p>
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. </p>
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. </p>
+<p>This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2. This is block 2</p>
+</td></tr></table>
+</div>
+
+<div id="ScrollWindow0Block3">
+<p>This is block 3. This is block 3. This is block 3. This is block 3. This is block 3. This is block 3. 
+</div>
+
+<script language="JavaScript">
+document.write(myscroll.divEnd)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>DynAPI Examples - MenuList Object 3</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript" src="../../js/menulist.js"></script>
+<script language="JavaScript">
+
+function init() {
+	dynduo.activate()
+}
+
+dynduo = new MenuList(10,10,180,18)
+dynduo.overOpen = true
+
+// when you click on a list item it will redirect based on the VALUES sent to the list's
+dynduo.onSelect = MenuListRedirect
+
+dynduo.list.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+
+dynduo.list.add(0,'&nbsp;The Basics')
+dynduo.list.add(1,'&nbsp;Advanced Topics')
+dynduo.list.add(2,'&nbsp;Object-Oriented DHTML')
+dynduo.list.add(3,'&nbsp;Reuseable Components')
+
+basics = new MenuList(dynduo,0)
+basics.list.add('../../lessons/en/overview.html','&nbsp;Overview')
+basics.list.add('../../lessons/en/stylesheets.html','&nbsp;Stylesheets')
+basics.list.add('../../lessons/en/javascript.html','&nbsp;JavaScript')
+
+advanced = new MenuList(dynduo,1)
+advanced.list.add('../../lessons/en/writing.html','&nbsp;Layer Writing')
+advanced.list.add('../../lessons/en/keystrokes.html','&nbsp;External Source Files')
+advanced.list.add('../../lessons/en/widthheight.html','&nbsp;Using Width/Height')
+
+object = new MenuList(dynduo,2)
+object.list.add('../../lessons/en/newobjects.html','&nbsp;Creating New Objects')
+object.list.add('../../lessons/en/browsercheck.html','&nbsp;BrowserCheck Object')
+object.list.add('../../lessons/en/dynlayer.html','&nbsp;The Dynamic Layer Object API')
+
+reuse = new MenuList(dynduo,3)
+reuse.list.add('../../lessons/en/widgets.html','&nbsp;Creating Widgets')
+reuse.list.add('../../lessons/en/scroll2.html','&nbsp;Scroll 2')
+reuse.list.add('../../lessons/en/collapse.html','&nbsp;CollapseMenu')
+
+dynduo.build()
+
+writeCSS(
+dynduo.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(dynduo.div)
+</script>
+
+</body>
+</html>

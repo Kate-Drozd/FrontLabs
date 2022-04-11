@@ -1,0 +1,50 @@
+<html lang="en">
+<head><title>Массивы</title>
+    <meta charset="UTF-8">
+    <script language="javascript">
+        //первый способ задания массива
+        var arr1 = new Array(12);
+        //второй способ задания массива
+        var arr2 = [];
+        //заполняется первый массив
+        arr1[0]= "Январь";
+        arr1[1]="Февраль";
+        arr1[2]="Март";
+        arr1[3]="Апрель";
+        arr1[4]="Июнь";
+        arr1[5]="Июль";
+        arr1[6]="Август";
+        arr1[7]="Сентябрь";
+        arr1[8]="Октябрь";
+        arr1[9]="Ноябрь";
+        arr1[10]="Декабрь";
+
+
+        alert("массив вида var arr = new Array(): "+ arr1);
+        var answer = confirm("Хотите вывести массив по-английски вида var arr = []? Сделайте выбор: yes - по-английски/no - по-русски");
+        if (answer === true){
+            arr2=["January", 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            alert(arr2);
+        } else{
+            arr2 = [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ];
+
+            alert(arr2);
+        }
+        alert("длинна массивов: "+ arr2.length);
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>DynAPI Examples - MenuBar</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/dynlayer-common.js"></script>
+<script language="JavaScript" src="../../js/mouseevents.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript" src="../../js/menulist.js"></script>
+<script language="JavaScript" src="../../js/menubar.js"></script>
+<script language="JavaScript">
+<!--
+
+function init() {
+	dynduo.activate()
+	numbers.activate()
+	letters.activate()
+	mybar.activate()
+	
+	//initMouseEvents()
+}
+
+// a system such as this needs to be implemented to allow clicking the background document to close any open MenuLists.
+menuBarClose = false
+menuBarItem = null
+function DynMouseDown() {
+	if (mybar.selectedIndex!=null) {
+		menuBarItem = mybar.selectedIndex
+		menuBarItemList = mybar.items[mybar.selectedIndex].menulist.list.selectedIndex
+		setTimeout('testMenuBar()',100)
+	}
+	else {
+		menuBarItem = null
+	}
+	return true
+}
+function testMenuBar() {
+	if (mybar.selectedIndex!=null && menuBarItem==mybar.selectedIndex && menuBarItemList==mybar.items[mybar.selectedIndex].menulist.list.selectedIndex) mybar.itemDown(menuBarItem)
+}
+
+
+dynduo = new MenuList(100,100,180,18)
+dynduo.overOpen = true
+dynduo.list.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+
+dynduo.visibility = 'hidden'
+
+dynduo.list.add(0,'&nbsp;The Basics')
+dynduo.list.add(1,'&nbsp;Advanced Topics')
+dynduo.list.add(2,'&nbsp;Object-Oriented DHTML')
+dynduo.list.add(3,'&nbsp;Reuseable Components')
+
+basics = new MenuList(dynduo,0)
+basics.list.add('../../lessons/en/overview.html','&nbsp;Overview')
+basics.list.add('../../lessons/en/stylesheets.html','&nbsp;Stylesheets')
+basics.list.add('../../lessons/en/javascript.html','&nbsp;JavaScript')
+
+advanced = new MenuList(dynduo,1)
+advanced.list.add('../../lessons/en/writing.html','&nbsp;Layer Writing')
+advanced.list.add('../../lessons/en/keystrokes.html','&nbsp;External Source Files')
+advanced.list.add('../../lessons/en/widthheight.html','&nbsp;Using Width/Height')
+
+object = new MenuList(dynduo,2)
+object.list.add('../../lessons/en/newobjects.html','&nbsp;Creating New Objects')
+object.list.add('../../lessons/en/browsercheck.html','&nbsp;BrowserCheck Object')
+object.list.add('../../lessons/en/dynlayer.html','&nbsp;The Dynamic Layer Object API')
+
+reuse = new MenuList(dynduo,3)
+reuse.list.add('../../lessons/en/widgets.html','&nbsp;Creating Widgets')
+reuse.list.add('../../lessons/en/scroll2.html','&nbsp;Scroll 2')
+reuse.list.add('../../lessons/en/collapse.html','&nbsp;CollapseMenu')
+
+dynduo.build()
+
+
+numbers = new MenuList(200,100,100,18)
+numbers.overOpen = true
+numbers.list.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+
+numbers.visibility = 'hidden'
+
+numbers.list.add(0,'&nbsp;item 0')
+numbers.list.add(1,'&nbsp;item 1')
+numbers.list.add(2,'&nbsp;item 2')
+
+numbers0 = new MenuList(numbers,0,200)  // set new width
+numbers0.list.add(0,'&nbsp;item 0')
+numbers0.list.add(1,'&nbsp;item 1')
+numbers0.list.add(2,'&nbsp;item 2')
+
+  numbers0_0 = new MenuList(numbers0,0,50)  // set new width
+  numbers0_0.list.add(0,'&nbsp;item 0')
+  numbers0_0.list.add(1,'&nbsp;item 1')
+  numbers0_0.list.add(2,'&nbsp;item 2')
+
+numbers1 = new MenuList(numbers,1)
+numbers1.list.add(0,'&nbsp;item 0')
+numbers1.list.add(1,'&nbsp;item 1')
+numbers1.list.add(2,'&nbsp;item 2')
+
+  numbers1_2 = new MenuList(numbers1,2)
+  numbers1_2.list.add(0,'&nbsp;item 0')
+  numbers1_2.list.add(1,'&nbsp;item 1')
+  numbers1_2.list.add(2,'&nbsp;item 2')
+
+numbers2 = new MenuList(numbers,2)
+numbers2.list.add(0,'&nbsp;item 0')
+numbers2.list.add(1,'&nbsp;item 1')
+numbers2.list.add(2,'&nbsp;item 2')
+
+numbers.build()
+
+letters = new MenuList(300,100,100,18)
+letters.overOpen = true
+letters.list.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+
+letters.visibility = 'hidden'
+
+letters.list.add(0,'&nbsp;A')
+letters.list.add(1,'&nbsp;B')
+letters.list.add(2,'&nbsp;C')
+
+lettersA = new MenuList(letters,0)
+lettersA.list.add(0,'&nbsp;a 0')
+lettersA.list.add(1,'&nbsp;a 1')
+lettersA.list.add(2,'&nbsp;a 2')
+
+lettersB = new MenuList(letters,1)
+lettersB.list.add(0,'&nbsp;b 0')
+lettersB.list.add(1,'&nbsp;b 1')
+lettersB.list.add(2,'&nbsp;b 2')
+
+lettersC = new MenuList(letters,2)
+lettersC.list.add(0,'&nbsp;c 0')
+lettersC.list.add(1,'&nbsp;c 1')
+lettersC.list.add(2,'&nbsp;c 2')
+
+letters.build()
+
+
+// Add the top-level MenuList's to the MenuBar
+
+mybar = new MenuBar(50,50,20)
+mybar.overOpen = true  // set mouse over to open the menulist
+mybar.addItem('DynDuo',dynduo)
+mybar.addItem('Numbers',numbers)
+mybar.addItem('Letters',letters)
+mybar.build()
+
+writeCSS (
+dynduo.css+
+numbers.css+
+letters.css+
+mybar.css
+)
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(dynduo.div)
+document.write(numbers.div)
+document.write(letters.div)
+document.write(mybar.div)
+</script>
+
+</body>
+</html>

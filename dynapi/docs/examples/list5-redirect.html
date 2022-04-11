@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>DynAPI Examples - List Object Demo 5 [Using onSelect to Redirect the Browser]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript">
+
+function init() {
+	mylist.activate()
+}
+
+mylist = new List(50,50,150)
+mylist.add('list.html','Back to List Object')
+mylist.add('../index.html','DynDuo Home')
+mylist.add('mailto:dynduo@dansteinman.com','Email Me')
+mylist.build()
+
+mylist.onSelect = ListRedirect
+
+writeCSS (
+mylist.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+This will redirect the browser to the specified page:
+
+<script language="JavaScript">
+document.write(mylist.div)
+</script>
+
+</body>
+</html>

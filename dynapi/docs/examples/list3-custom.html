@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>DynAPI Examples - List Object Demo 3 [Customizing]</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript">
+
+function init() {
+	mylist.activate()
+}
+
+mylist = new List(100,100,150)
+
+mylist.itemSpacing = 0
+mylist.fontname = 'Helvetica'
+mylist.fontsize = 16
+mylist.color.textNormal = '#ffffff'
+mylist.color.textSelected = '#000000'
+mylist.color.bgNormal = '#284256'
+mylist.color.bgSelected = '#8AAFCC'
+mylist.color.bgRollover = '#406889'
+mylist.color.bg = '#C0C0C0'  // will not show if itemSpacing is 0
+
+mylist.setCols(50,50,50)
+mylist.add('zero','item','0','zero')
+mylist.add('one','item','1','one')
+mylist.add('two','item','2','two')
+mylist.add('three','item','3','three')
+mylist.add('four','item','4','four')
+mylist.build()
+
+writeCSS (
+mylist.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<script language="JavaScript">
+document.write(mylist.div)
+</script>
+
+</body>
+</html>

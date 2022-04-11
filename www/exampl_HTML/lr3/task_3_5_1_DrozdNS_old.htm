@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Пример 4_1: DHTML - применение слоев- движение изображения с вращающимся спутником</title>
+    <META content="text/html; charset=windows-1251" http-equiv="Content-Type">
+    <SCRIPT LANGUAGE="JavaScript1.2">
+        var p1;     // текущая координата слоя
+        var sp1;    // приращение при движении слоя
+        var Circle = false;
+        var Line = false;
+        // установка начальных параметров перемещения слоя
+        function initLine()
+        {Line = false;
+            p1=975;
+            sp1=1;
+            l1.style.right=975;
+        }
+        //  сдвиг слоя на вычисленный шаг вправо
+        var timerLine = 10;
+        function succLine(){
+            sp1=1;
+            p1 = p1 + sp1;
+            if (p1 > 1700) p1=975;
+            l1.style.right=p1;
+            timerLine=setTimeout("succLine()", 200);
+            if(Line==true) stoppedLine();
+        }
+        var timerCircle = 10;
+        function initCircle()
+        {
+            timerCircle = setInterval('moveImage()', 1);
+        }
+        //  начальные установки для движения по окружности
+        var angle = 0;
+        var radius = 50;
+        var xbegin = 80;
+        var ybegin = 80;
+        var d = document;
+        //   движение изображения-спутника по окружности
+        function moveImage()
+        {var
+            rad = angle * Math.PI/180;
+            //  вычисление координаты следующего положения изображения
+            d.myimage.style.pixelLeft = xbegin - radius * Math.sin(rad);
+            d.myimage.style.pixelTop = ybegin + radius * Math.cos(rad);
+            angle +=3;
+            if (angle >= 360) angle = 0;
+            if (Circle==true) stoppedCircle();
+        }
+        /////////////
+        function stoppedCircle()
+        {
+            clearInterval(timerCircle);
+        }
+        function stoppedLine()
+        {
+            clearTimeout(timerLine);
+        }
+        //////////////
+    </SCRIPT>
+</head>
+<body onload = "initLine()">
+<center>
+    <h3>Пример использования слоёв: движение изображения с вращающимся спутником</h3>
+    <FORM name="form1">
+        <input type="button" value="Ускорить спутник" onClick="initCircle()">
+        <input type="button" value="Ускорить влево" onClick="initLine(); succLine()">
+        <input type="button" value="Влево" onClick="initLine()">
+        <input type="button" value="Тормоз спутника" onClick="Circle=true">
+        <input type="button" value="Стоп влево" onClick="Line=true">
+    </FORM>
+</center>
+<table width=878 height=185 border=4 bgcolor="midnightblue" bordercolor="black">
+    <tr><td>
+        <div  id="l1" style="position:absolute; right:900; background:midnightblue; width:178; height:176; top:121;">
+            <img src="../../../image1/earth.png" name="mycenter";
+                 style="position:absolute; left:80; top: 80; width:40; height:15">
+            <img src="../../../image1/moon.png" name="myimage";
+                 style="position:absolute; left:80; top:130; width:42; height:23">
+        </div>
+    </td></tr>
+</table>
+</body>
+</html>

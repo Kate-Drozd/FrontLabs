@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>DynAPI Examples - MenuList Object 2</title>
+<script language="JavaScript" src="../../js/dynlayer.js"></script>
+<script language="JavaScript" src="../../js/list.js"></script>
+<script language="JavaScript" src="../../js/menulist.js"></script>
+<script language="JavaScript">
+
+function init() {
+	numbers.activate()
+	letters.activate()
+}
+
+numbers = new MenuList(50,100,100,18)
+numbers.list.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+numbers.visibility = 'hidden'
+numbers.zIndex = 2
+numbers.offsetX = 3
+numbers.offsetY = 3
+numbers.list.color.bgNormal = '#ffffff'
+numbers.list.color.bgSelected = '#606060'
+numbers.list.color.bgRollover = '#E0E0E0'
+numbers.list.color.bg = '#000000'
+numbers.list.itemSpacing = 0
+
+numbers.list.add(0,'&nbsp;item 0')
+numbers.list.add(1,'&nbsp;item 1')
+numbers.list.add(2,'&nbsp;item 2')
+
+numbers0 = new MenuList(numbers,0,200)  // set new width
+numbers0.list.add(0,'&nbsp;item 0')
+numbers0.list.add(1,'&nbsp;item 1')
+numbers0.list.add(2,'&nbsp;item 2')
+
+  numbers0_0 = new MenuList(numbers0,0,50)  // set new width
+  numbers0_0.list.add(0,'&nbsp;item 0')
+  numbers0_0.list.add(1,'&nbsp;item 1')
+  numbers0_0.list.add(2,'&nbsp;item 2')
+
+numbers1 = new MenuList(numbers,1)
+numbers1.list.add(0,'&nbsp;item 0')
+numbers1.list.add(1,'&nbsp;item 1')
+numbers1.list.add(2,'&nbsp;item 2')
+
+  numbers1_2 = new MenuList(numbers1,2)
+  numbers1_2.list.add(0,'&nbsp;item 0')
+  numbers1_2.list.add(1,'&nbsp;item 1')
+  numbers1_2.list.add(2,'&nbsp;item 2')
+
+numbers2 = new MenuList(numbers,2)
+numbers2.list.add(0,'&nbsp;item 0')
+numbers2.list.add(1,'&nbsp;item 1')
+numbers2.list.add(2,'&nbsp;item 2')
+
+numbers.build()
+
+
+letters = new MenuList(200,100,100,18)
+letters.list.setImage('../../images/list-node0.gif','../../images/list-node1.gif',12,18)
+letters.visibility = 'hidden'
+letters.zIndex = 1
+letters.offsetX = -3
+letters.offsetY = 3
+
+letters.list.add(0,'&nbsp;A')
+letters.list.add(1,'&nbsp;B')
+letters.list.add(2,'&nbsp;C')
+
+lettersA = new MenuList(letters,0)
+lettersA.list.add(0,'&nbsp;a 0')
+lettersA.list.add(1,'&nbsp;a 1')
+lettersA.list.add(2,'&nbsp;a 2')
+
+lettersB = new MenuList(letters,1)
+lettersB.list.add(0,'&nbsp;b 0')
+lettersB.list.add(1,'&nbsp;b 1')
+lettersB.list.add(2,'&nbsp;b 2')
+
+lettersC = new MenuList(letters,2)
+lettersC.list.add(0,'&nbsp;c 0')
+lettersC.list.add(1,'&nbsp;c 1')
+lettersC.list.add(2,'&nbsp;c 2')
+
+letters.build()
+
+writeCSS(
+numbers.css+
+letters.css
+)
+
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="init()">
+
+<a href="javascript:numbers.toggle()">Numbers</a>
+<br><a href="javascript:letters.toggle()">Letters</a>
+
+<script language="JavaScript">
+document.write(numbers.div)
+document.write(letters.div)
+</script>
+
+</body>
+</html>
