@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>APOD API</title>
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Underdog&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>APOD API</h1>
+        <nav>
+            <label for="show-menu" class="show-menu"><span class='material-icons'>menu</span></label>
+            <input type="checkbox" id="show-menu" role="button" value="">
+            <ul id="menu">
+                <li><a href="./www/exampl_HTML/task_2_1_DrozdNS.htm">О себе</a></li>
+                <li><a href="./www/exampl_HTML/task_2_2_DrozdNS.htm">План обучения программированию</a></li>
+                <li><a href="./www/exampl_HTML/task_2_3_DrozdNS.htm">Интересы</a></li>
+            </ul>
+        </nav>
+        <section class="content">
+            <div>
+                <label for="startDate">Введите дату начала поиска:</label>
+                <input type="date" id="startDate" name="startDate" value="2022-03-01">
+            </div>
+            <div>
+                <label for="endDate">Введите дату окончания поиска:</label>
+                <input type="date" id="endDate" name="endDate" value="2022-04-01">
+            </div>
+        </section>
+        <button onclick="getPeriodInfo()">Поиск</button>
+        <section class="result">
+            
+        </section>
+        <footer>
+            <table>
+                <TR>
+                    <td>
+                        <A href="rab1.htm" title="КМТИ: Кафедры ">Кафедры</A>
+                    </td>
+                    <td>
+                        <A href="rab1.htm" title="ПрофСтудКомы">СтудКом</A>
+                    </td>
+                    <td>
+                        <a href="tel:+375295659276">
+                            <span class='material-icons'>call</span> МТС
+                        </a>
+                    </td>
+                </TR>
+                <TR>
+                    <td>
+                        <A href="rab1.htm" title="КМТИ: Деканаты ">Деканаты</A>
+                    </td>
+                    <td>
+                        <A href="rab1.htm" title="кафедра-сотрудники">Преподаватель</A>
+                    </td>
+                    <td>
+                        <a href="mailto:nikitadrozd2001@gmail.com">
+                            <span class='material-icons'>email</span> Почта
+                        </a>
+                    </td>
+                </TR>
+                <TR>
+                    <td>
+                        <A href="rab1.htm" title="КМТИ: Библиотека ">Библиотека</A>
+                    </td>
+                    <td>
+                        <A href="rab1.htm" title="ФИТУ-группа-студенты">Студент</A>
+                    </td>
+                    <td>
+                        <a href="skype:+375295659276?add">
+                            <span class='material-icons'>contact_page</span> Skype
+                        </a>
+                    </td>
+                </TR>
+            </table>
+        </footer>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+</HTML>
