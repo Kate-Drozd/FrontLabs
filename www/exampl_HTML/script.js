@@ -9,20 +9,42 @@ function updateDOM(data){
     while (myNode.firstChild) {
         myNode.removeChild(myNode.firstChild);
     } 
+  let type = data.media_type;
   let div = document.createElement("div");
   let name = document.createElement("label");
+  let explanation  = document.createElement("label");
   let img = document.createElement("img");
   let br = document.createElement("span");
+  let br2 = document.createElement("span");
   br.innerHTML = "<br/>";
+  br2.innerHTML = "<br/>";
+  var video = document.createElement("IFRAME");
   img.src = data.url;
   img.alt = `${data.title}`;
   name.innerHTML = `${data.title}`;
+  video.style.display = "none";
+  video.src = `${data.url}`;
+  video.setAttribute("src", data.url);
+  video.width = "400";
+  video.height = "100";
+  
+  explanation.innerHTML = `${data.explanation}`;
   document
           .querySelector(".result")
           .appendChild(div)
           .appendChild(name)
           .appendChild(br)
+          .appendChild(explanation)
+          .appendChild(br2);
+  if(type === 'image'){
+    document
+          .querySelector(".result")
           .appendChild(img);
+  } else {
+    document
+          .querySelector(".result")
+          .appendChild(video);
+  }
 }
 
 function getAPOD(url){ 
@@ -30,9 +52,10 @@ function getAPOD(url){
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
     headers: {
-    'Content-Type': 'application/json',
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    }, // body data type must match "Content-Type" header
+      "X-Content-Type-Options": "nosniff",
+      'Access-Control-Allow-Origin':'*',
+      'Content-Type': 'application/*+json',
+    }, 
   })
   .then((response) => {
     if (response.ok){
@@ -53,6 +76,9 @@ function getAPOD(url){
   });
 }
 getAPOD(apod);
+
 function getPeriodInfo(){
+  startDate = document.querySelector("#startDate").value;
+  endDate = document.querySelector("#endDate").value;
  getAPOD(apodWithPeriod);
 }
